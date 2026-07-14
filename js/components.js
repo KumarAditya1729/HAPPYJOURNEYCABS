@@ -180,7 +180,7 @@ function renderFloatingActions() {
   <div class="sticky-mobile-call">
     <div class="sticky-mobile-grid">
       <a href="tel:+919783201155" class="sticky-btn call-btn">
-        <i class="fas fa-phone-alt"></i> Call Now (+91 9783201155)
+        <i class="fas fa-phone-alt"></i> Call Now
       </a>
       <a href="https://wa.me/919783201155?text=Hello%20Happy%20Journey%20Cabs,%20I%20need%20a%20cab%20booking." target="_blank" class="sticky-btn wa-btn">
         <i class="fab fa-whatsapp"></i> WhatsApp
