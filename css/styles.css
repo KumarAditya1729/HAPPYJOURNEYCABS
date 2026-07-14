@@ -164,12 +164,11 @@ ul { list-style: none; }
   padding: 0.4rem 1.1rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-gold);
-  margin-bottom: 1rem;
+  margin: 0.35rem auto 1.15rem 0 !important;
 }
 .royal-subtitle::before, .royal-subtitle::after {
-  content: '✦';
-  color: var(--gold);
-  font-size: 0.9rem;
+  content: none !important;
+  display: none !important;
 }
 
 /* Decorative Divider */
@@ -322,8 +321,8 @@ ul { list-style: none; }
 .header-top {
   background: var(--royal-maroon-dark);
   color: var(--gold-light);
-  padding: 0.5rem 0;
-  font-size: clamp(0.8rem, 1vw, 0.88rem);
+  padding: 0.4rem 0;
+  font-size: clamp(0.78rem, 1vw, 0.86rem);
   font-weight: 500;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -331,8 +330,14 @@ ul { list-style: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+@media (max-width: 1280px) {
+  .header-top-container {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
 }
 .contact-pills {
   display: flex;
@@ -513,7 +518,7 @@ ul { list-style: none; }
 .hero-section {
   position: relative;
   min-height: clamp(550px, 85vh, 850px);
-  padding: clamp(110px, 12vh, 150px) 0 clamp(60px, 8vh, 80px);
+  padding: clamp(165px, 16.5vh, 205px) 0 clamp(65px, 8vh, 85px) !important;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, rgba(22, 18, 16, 0.78), rgba(106, 27, 41, 0.72)), url('/assets/images/hero-banner.jpg') center/cover no-repeat;
@@ -1255,6 +1260,7 @@ th {
     max-width: 2000px !important;
   }
   .nav-container { height: 96px; }
+  .hero-section { padding: 195px 0 95px !important; }
 }
 
 /* 2. 2K & Large Monitors (min-width: 1920px and max-width: 2559px) */
@@ -1263,6 +1269,7 @@ th {
   .container {
     max-width: 1680px !important;
   }
+  .hero-section { padding: 185px 0 90px !important; }
 }
 
 /* 3. Large Laptops / MacBook Pro 16 (min-width: 1536px and max-width: 1919px) */
@@ -1271,6 +1278,7 @@ th {
   .container {
     max-width: 1440px !important;
   }
+  .hero-section { padding: 175px 0 85px !important; }
 }
 
 /* 4. Standard Desktop (min-width: 1440px and max-width: 1535px) */
@@ -1279,6 +1287,7 @@ th {
   .container {
     max-width: 1320px !important;
   }
+  .hero-section { padding: 168px 0 80px !important; }
 }
 
 /* 5. Standard Laptops / MacBook Air (min-width: 1280px and max-width: 1439px) */
@@ -1289,6 +1298,7 @@ th {
   }
   .nav-menu { gap: 1.2rem; }
   .nav-link { font-size: 0.9rem; }
+  .hero-section { padding: 165px 0 78px !important; }
 }
 
 /* 6. Small Laptops / iPad Pro Landscape (min-width: 1024px and max-width: 1279px) */
@@ -1301,6 +1311,7 @@ th {
   .nav-link { font-size: 0.85rem; }
   .logo-img { width: 44px; height: 44px; }
   .logo-title { font-size: 1.2rem; }
+  .hero-section { padding: 160px 0 75px !important; }
 }
 
 /* 7. Tablets Landscape / iPad Air & Pro Portrait (max-width: 1023px) */
@@ -1315,6 +1326,9 @@ th {
   .nav-container {
     height: 74px !important;
     padding: 0 1.5rem !important;
+  }
+  .hero-section {
+    padding: 135px 0 65px !important;
   }
   .logo-img {
     width: 44px !important;
@@ -1480,7 +1494,7 @@ th {
     padding: 0 1.5rem !important;
   }
   .hero-section {
-    padding: 120px 0 60px !important;
+    padding: 130px 0 60px !important;
   }
 }
 
@@ -1554,7 +1568,7 @@ th {
 
   /* Hero Adjustments */
   .hero-section {
-    padding: 95px 0 50px !important;
+    padding: 110px 0 50px !important;
     min-height: auto !important;
   }
   .hero-content { text-align: center; }
@@ -1733,7 +1747,7 @@ th {
     padding: 0 0.75rem !important;
   }
   .hero-section {
-    padding: 85px 0 35px !important;
+    padding: 95px 0 38px !important;
   }
   .logo-img {
     width: 32px !important;
