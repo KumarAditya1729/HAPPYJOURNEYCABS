@@ -1,17 +1,17 @@
 /* ==========================================================================
-   HAPPY JOURNEY CABS — REUSABLE UI COMPONENTS
+   HAPPY JOURNEY CABS — REUSABLE UI COMPONENTS (RESPONSIVE & ACCESSIBLE)
    ========================================================================== */
 
 function renderHeader(activePage = 'index') {
   return `
-  <header class="site-header" id="siteHeader">
+  <header class="site-header" id="siteHeader" role="banner">
     <!-- Top Bar -->
     <div class="header-top">
       <div class="container header-top-container">
         <div class="contact-pills">
-          <a href="tel:+919783201155"><i class="fas fa-phone-alt"></i> +91 9783201155</a>
-          <a href="https://wa.me/919783201155" target="_blank"><i class="fab fa-whatsapp"></i> +91 9783201155</a>
-          <a href="mailto:sainikaml8502@gmail.com"><i class="fas fa-envelope"></i> sainikaml8502@gmail.com</a>
+          <a href="tel:+919783201155" aria-label="Call Customer Care +91 9783201155"><i class="fas fa-phone-alt"></i> +91 9783201155</a>
+          <a href="https://wa.me/919783201155" target="_blank" aria-label="WhatsApp Us +91 9783201155"><i class="fab fa-whatsapp"></i> +91 9783201155</a>
+          <a href="mailto:sainikaml8502@gmail.com" aria-label="Email Customer Care sainikaml8502@gmail.com"><i class="fas fa-envelope"></i> sainikaml8502@gmail.com</a>
         </div>
         <div>
           <span style="color: var(--gold); font-weight: 700;"><i class="fas fa-clock"></i> 24×7 Premium Cab & Tour Service across Rajasthan</span>
@@ -21,32 +21,32 @@ function renderHeader(activePage = 'index') {
 
     <!-- Main Navbar -->
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/images/logo.png" alt="Happy Journey Cabs Logo" class="logo-img">
+      <a href="index.html" class="logo" aria-label="Happy Journey Cabs Home Page">
+        <img src="assets/images/logo.png" alt="Happy Journey Cabs Logo" class="logo-img" width="56" height="56" loading="eager" decoding="async">
         <div class="logo-text">
           <span class="logo-title">Happy Journey Cabs</span>
           <span class="logo-tagline">Royal Rajasthan Tours</span>
         </div>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation" role="navigation">
         <a href="index.html" class="nav-link ${activePage === 'index' ? 'active' : ''}">Home</a>
         <a href="about.html" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
         <a href="fleet.html" class="nav-link ${activePage === 'fleet' ? 'active' : ''}">Fleet</a>
         <a href="services.html" class="nav-link ${activePage === 'services' ? 'active' : ''}">Services</a>
         <a href="cab-pricing.html" class="nav-link ${activePage === 'pricing' ? 'active' : ''}">Cab Pricing</a>
-        <div class="nav-item-dropdown" style="position: relative; display: inline-block;">
-          <a href="packages.html" class="nav-link ${['packages','rajasthan','jaipur-sightseeing','pilgrimage','uttarakhand','himachal','up','mp','delhi'].includes(activePage) ? 'active' : ''}" style="display: inline-flex; align-items: center; gap: 0.3rem;">Tour Packages <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
-          <div class="nav-dropdown-menu" style="position: absolute; top: 100%; left: 0; background: var(--ivory); min-width: 240px; box-shadow: var(--shadow-lg); border-radius: var(--radius-sm); border: 2px solid var(--gold); display: none; z-index: 1000; padding: 0.5rem 0;">
-            <a href="packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; font-weight: 600; border-bottom: 1px solid var(--border-color);">All Tour Packages Overview</a>
-            <a href="rajasthan-packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; border-bottom: 1px solid var(--border-color);">✦ Rajasthan Tour Packages</a>
-            <a href="jaipur-sightseeing.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; border-bottom: 1px solid var(--border-color);">✦ Jaipur Sightseeing Packages</a>
-            <a href="pilgrimage-packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; border-bottom: 1px solid var(--border-color);">✦ Temple & Pilgrimage Tours</a>
-            <a href="uttarakhand-packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; border-bottom: 1px solid var(--border-color);">✦ Uttarakhand Packages</a>
-            <a href="himachal-packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; border-bottom: 1px solid var(--border-color);">✦ Himachal Pradesh Packages</a>
-            <a href="up-packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; border-bottom: 1px solid var(--border-color);">✦ Uttar Pradesh Packages</a>
-            <a href="mp-packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem; border-bottom: 1px solid var(--border-color);">✦ Madhya Pradesh Packages</a>
-            <a href="delhi-packages.html" style="display: block; padding: 0.6rem 1.2rem; color: var(--dark-brown); font-size: 0.88rem;">✦ Delhi Heritage Tours</a>
+        <div class="nav-item-dropdown" id="navDropdownContainer">
+          <a href="packages.html" class="nav-link ${['packages','rajasthan','jaipur-sightseeing','pilgrimage','uttarakhand','himachal','up','mp','delhi'].includes(activePage) ? 'active' : ''}" id="tourPackagesDropdownToggle" aria-haspopup="true" aria-expanded="false" style="display: inline-flex; align-items: center; gap: 0.3rem;">Tour Packages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+          <div class="nav-dropdown-menu" id="tourPackagesDropdownMenu" aria-label="Tour Packages Submenu">
+            <a href="packages.html">All Tour Packages Overview</a>
+            <a href="rajasthan-packages.html">✦ Rajasthan Tour Packages</a>
+            <a href="jaipur-sightseeing.html">✦ Jaipur Sightseeing Packages</a>
+            <a href="pilgrimage-packages.html">✦ Temple & Pilgrimage Tours</a>
+            <a href="uttarakhand-packages.html">✦ Uttarakhand Packages</a>
+            <a href="himachal-packages.html">✦ Himachal Pradesh Packages</a>
+            <a href="up-packages.html">✦ Uttar Pradesh Packages</a>
+            <a href="mp-packages.html">✦ Madhya Pradesh Packages</a>
+            <a href="delhi-packages.html">✦ Delhi Heritage Tours</a>
           </div>
         </div>
         <a href="destinations.html" class="nav-link ${activePage === 'destinations' ? 'active' : ''}">Destinations</a>
@@ -56,7 +56,7 @@ function renderHeader(activePage = 'index') {
         <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.3rem; font-size: 0.85rem;"><i class="fas fa-taxi"></i> Book Now</a>
       </nav>
 
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -66,13 +66,13 @@ function renderHeader(activePage = 'index') {
 
 function renderFooter() {
   return `
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <!-- Col 1: Brand -->
         <div>
-          <a href="index.html" class="logo" style="margin-bottom: 1.2rem;">
-            <img src="assets/images/logo.png" alt="Happy Journey Cabs Logo" class="logo-img" style="width: 64px; height: 64px;">
+          <a href="index.html" class="logo" style="margin-bottom: 1.2rem;" aria-label="Happy Journey Cabs Home Page">
+            <img src="assets/images/logo.png" alt="Happy Journey Cabs Logo" class="logo-img" width="64" height="64" loading="lazy" decoding="async">
             <div class="logo-text">
               <span class="logo-title" style="color: var(--gold-light);">Happy Journey Cabs</span>
               <span class="logo-tagline" style="color: var(--sandstone);">Rajasthan Luxury Travel</span>
@@ -82,10 +82,10 @@ function renderFooter() {
             Happy Journey Cabs is Rajasthan’s premier luxury cab rental and holiday planning agency. Drawing inspiration from royal fort heritage and unmatched guest hospitality, we provide verified chauffeurs, transparent pricing, and spotless air-conditioned vehicles 24×7.
           </p>
           <div style="display: flex; gap: 1rem; font-size: 1.25rem;">
-            <a href="https://wa.me/919783201155" target="_blank" style="color: var(--gold);"><i class="fab fa-whatsapp"></i></a>
-            <a href="tel:+919783201155" style="color: var(--gold);"><i class="fas fa-phone"></i></a>
-            <a href="mailto:sainikaml8502@gmail.com" style="color: var(--gold);"><i class="fas fa-envelope"></i></a>
-            <a href="https://maps.google.com" target="_blank" style="color: var(--gold);"><i class="fas fa-map-marker-alt"></i></a>
+            <a href="https://wa.me/919783201155" target="_blank" style="color: var(--gold); min-height: 48px; min-width: 48px; display: inline-flex; align-items: center; justify-content: center;" aria-label="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+919783201155" style="color: var(--gold); min-height: 48px; min-width: 48px; display: inline-flex; align-items: center; justify-content: center;" aria-label="Call Us"><i class="fas fa-phone"></i></a>
+            <a href="mailto:sainikaml8502@gmail.com" style="color: var(--gold); min-height: 48px; min-width: 48px; display: inline-flex; align-items: center; justify-content: center;" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
+            <a href="https://maps.google.com" target="_blank" style="color: var(--gold); min-height: 48px; min-width: 48px; display: inline-flex; align-items: center; justify-content: center;" aria-label="Location Map"><i class="fas fa-map-marker-alt"></i></a>
           </div>
         </div>
 
@@ -158,7 +158,7 @@ function renderFooter() {
 
       <div class="footer-bottom">
         <p>&copy; ${new Date().getFullYear()} Happy Journey Cabs. All Rights Reserved. Designed with Royal Heritage & SEO Excellence.</p>
-        <div style="margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.82rem;">
+        <div style="margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.82rem; flex-wrap: wrap;">
           <a href="faq.html">Privacy Policy</a>
           <a href="faq.html">Terms & Conditions</a>
           <a href="sitemap.xml">XML Sitemap</a>
@@ -172,17 +172,17 @@ function renderFooter() {
 function renderFloatingActions() {
   return `
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/919783201155?text=Hello%20Happy%20Journey%20Cabs,%20I%20would%20like%20to%20inquire%20about%20a%20taxi/tour%20booking." target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/919783201155?text=Hello%20Happy%20Journey%20Cabs,%20I%20would%20like%20to%20inquire%20about%20a%20taxi/tour%20booking." target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp with Happy Journey Cabs">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- Sticky Mobile Call & WhatsApp Bar -->
-  <div class="sticky-mobile-call">
+  <div class="sticky-mobile-call" aria-label="Mobile Contact Bar">
     <div class="sticky-mobile-grid">
-      <a href="tel:+919783201155" class="sticky-btn call-btn">
+      <a href="tel:+919783201155" class="sticky-btn call-btn" aria-label="Call Now +91 9783201155">
         <i class="fas fa-phone-alt"></i> Call Now
       </a>
-      <a href="https://wa.me/919783201155?text=Hello%20Happy%20Journey%20Cabs,%20I%20need%20a%20cab%20booking." target="_blank" class="sticky-btn wa-btn">
+      <a href="https://wa.me/919783201155?text=Hello%20Happy%20Journey%20Cabs,%20I%20need%20a%20cab%20booking." target="_blank" class="sticky-btn wa-btn" aria-label="WhatsApp Booking Inquiry">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
@@ -193,7 +193,7 @@ function renderFloatingActions() {
 function renderBookingModal() {
   return `
   <!-- Universal Booking Modal -->
-  <div class="modal-overlay" id="bookingModal">
+  <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalVehicleTitle">
     <div class="modal-box">
       <button class="modal-close" id="closeModalBtn" aria-label="Close Booking Modal">&times;</button>
       
@@ -208,18 +208,18 @@ function renderBookingModal() {
         
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Full Name *</label>
-            <input type="text" class="form-input" required placeholder="e.g. Rajesh Sharma">
+            <label class="form-label" for="modalFullName">Full Name *</label>
+            <input type="text" class="form-input" id="modalFullName" required placeholder="e.g. Rajesh Sharma">
           </div>
           <div class="form-group">
-            <label class="form-label">Mobile / WhatsApp *</label>
-            <input type="tel" class="form-input" required placeholder="+91 XXXXXXXXXX">
+            <label class="form-label" for="modalMobile">Mobile / WhatsApp *</label>
+            <input type="tel" class="form-input" id="modalMobile" required placeholder="+91 XXXXXXXXXX">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Service Type</label>
+            <label class="form-label" for="modalServiceType">Service Type</label>
             <select class="form-select" id="modalServiceType">
               <option value="Local Taxi">Local Taxi (Jaipur / City)</option>
               <option value="One Way Taxi">One Way Drop</option>
@@ -230,25 +230,25 @@ function renderBookingModal() {
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Travel Date *</label>
-            <input type="date" class="form-input" required>
+            <label class="form-label" for="modalTravelDate">Travel Date *</label>
+            <input type="date" class="form-input" id="modalTravelDate" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Pickup City / Location</label>
-            <input type="text" class="form-input" placeholder="e.g. Jaipur Airport / Hotel">
+            <label class="form-label" for="modalPickupLocation">Pickup City / Location</label>
+            <input type="text" class="form-input" id="modalPickupLocation" placeholder="e.g. Jaipur Airport / Hotel">
           </div>
           <div class="form-group">
-            <label class="form-label">Destination / Tour Route</label>
-            <input type="text" class="form-input" placeholder="e.g. Udaipur & Mount Abu">
+            <label class="form-label" for="modalDestination">Destination / Tour Route</label>
+            <input type="text" class="form-input" id="modalDestination" placeholder="e.g. Udaipur & Mount Abu">
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Special Notes / Passengers</label>
-          <input type="text" class="form-input" placeholder="e.g. 4 Adults + 3 Bags, need clean Innova Crysta">
+          <label class="form-label" for="modalSpecialNotes">Special Notes / Passengers</label>
+          <input type="text" class="form-input" id="modalSpecialNotes" placeholder="e.g. 4 Adults + 3 Bags, need clean Innova Crysta">
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; font-size: 1rem;">
@@ -259,7 +259,7 @@ function renderBookingModal() {
   </div>
 
   <!-- Toast Notice -->
-  <div class="toast-notice" id="toastNotice">
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
     <i class="fas fa-check-circle" style="font-size: 1.3rem;"></i>
     <span id="toastMessage">Your booking inquiry has been submitted successfully!</span>
   </div>

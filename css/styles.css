@@ -25,12 +25,23 @@
   --border-gold: rgba(212, 175, 55, 0.4);
   --border-subtle: rgba(44, 30, 22, 0.1);
   --glass-bg: rgba(250, 249, 246, 0.88);
-  --glass-dark: rgba(22, 18, 16, 0.92);
+  --glass-dark: rgba(22, 18, 16, 0.95);
   
-  /* Typography */
+  /* Typography & Font Families */
   --font-heading: 'Cinzel', serif;
   --font-serif: 'Playfair Display', serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Responsive Fluid Typography with CSS clamp() */
+  --font-size-h1: clamp(1.85rem, 4vw + 0.5rem, 3.25rem);
+  --font-size-h2: clamp(1.45rem, 3vw + 0.4rem, 2.4rem);
+  --font-size-h3: clamp(1.18rem, 2.2vw + 0.3rem, 1.65rem);
+  --font-size-h4: clamp(1.05rem, 1.5vw + 0.2rem, 1.25rem);
+  --font-size-body: clamp(0.92rem, 0.4vw + 0.8rem, 1.05rem);
+  
+  /* Responsive Fluid Spacings with CSS clamp() */
+  --spacing-section-py: clamp(50px, 8vw, 100px);
+  --spacing-grid-gap: clamp(1.25rem, 2.5vw, 2.5rem);
   
   /* Shadows & Effects */
   --shadow-sm: 0 4px 12px rgba(44, 30, 22, 0.06);
@@ -44,10 +55,16 @@
   --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Base Reset & Typography */
+/* ==========================================================================
+   UNIVERSAL RESET & ZERO-OVERFLOW SAFEGUARDS
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+*::before, *::after {
   box-sizing: border-box;
 }
 
@@ -57,10 +74,12 @@ html {
   overflow-x: hidden !important;
   width: 100% !important;
   max-width: 100vw !important;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-body);
+  font-size: var(--font-size-body);
   background-color: var(--ivory);
   color: var(--text-dark);
   line-height: 1.65;
@@ -72,6 +91,21 @@ body {
   background-size: 40px 40px;
 }
 
+/* Zero Overflow Safeguards for Images & Media */
+img, video, canvas, svg, iframe {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Prevent Long Text / URLs from Overflowing */
+p, h1, h2, h3, h4, h5, h6, span, a, li, td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--dark-brown);
@@ -80,21 +114,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
-h1 { font-size: clamp(2.0rem, 4.5vw, 3.25rem); }
-h2 { font-size: clamp(1.65rem, 3.6vw, 2.4rem); }
-h3 { font-size: clamp(1.2rem, 2.8vw, 1.65rem); }
-h4 { font-size: 1.12rem; }
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
 
 a {
   color: inherit;
   text-decoration: none;
   transition: var(--transition);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 ul { list-style: none; }
@@ -103,7 +131,7 @@ ul { list-style: none; }
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 /* ==========================================================================
@@ -119,7 +147,7 @@ ul { list-style: none; }
   align-items: center;
   gap: 0.6rem;
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 1.5vw, 0.88rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -145,7 +173,7 @@ ul { list-style: none; }
   gap: 1rem;
 }
 .royal-divider span {
-  width: 80px;
+  width: clamp(40px, 10vw, 80px);
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--gold));
 }
@@ -154,19 +182,26 @@ ul { list-style: none; }
 }
 .royal-divider i {
   color: var(--royal-maroon);
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
 
-/* Buttons */
+/* Accessibility & Touch Target Optimization */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Buttons (Minimum 48px Touch Targets) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 0.9rem 1.8rem;
+  padding: clamp(0.85rem, 1.5vw, 1rem) clamp(1.4rem, 2.5vw, 2.2rem);
+  min-height: 48px;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: clamp(0.88rem, 1.2vw, 0.96rem);
   letter-spacing: 1px;
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -176,6 +211,7 @@ ul { list-style: none; }
   overflow: hidden;
   z-index: 1;
   border: none;
+  touch-action: manipulation;
 }
 
 .btn-primary {
@@ -184,11 +220,14 @@ ul { list-style: none; }
   border: 1px solid var(--gold);
   box-shadow: var(--shadow-md);
 }
-.btn-primary:hover {
-  background: linear-gradient(135deg, var(--royal-maroon-dark), #330B13);
-  color: var(--gold-light);
-  box-shadow: var(--shadow-gold);
-  transform: translateY(-2px);
+
+@media (hover: hover) {
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--royal-maroon-dark), #330B13);
+    color: var(--gold-light);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+  }
 }
 
 .btn-gold {
@@ -197,10 +236,13 @@ ul { list-style: none; }
   border: 1px solid #FFF;
   box-shadow: var(--shadow-gold);
 }
-.btn-gold:hover {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  color: var(--dark-charcoal);
-  transform: translateY(-2px);
+
+@media (hover: hover) {
+  .btn-gold:hover {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--dark-charcoal);
+    transform: translateY(-2px);
+  }
 }
 
 .btn-outline {
@@ -208,10 +250,18 @@ ul { list-style: none; }
   color: var(--royal-maroon);
   border: 2px solid var(--royal-maroon);
 }
-.btn-outline:hover {
-  background: var(--royal-maroon);
-  color: var(--ivory);
-  border-color: var(--gold);
+
+@media (hover: hover) {
+  .btn-outline:hover {
+    background: var(--royal-maroon);
+    color: var(--ivory);
+    border-color: var(--gold);
+  }
+}
+
+.btn:active {
+  transform: scale(0.97);
+  opacity: 0.95;
 }
 
 /* Jharokha Arch Card Effect */
@@ -219,11 +269,14 @@ ul { list-style: none; }
   background: var(--ivory-pure);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-gold);
-  padding: 2rem;
+  padding: clamp(1.4rem, 2.5vw, 2.2rem);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .jharokha-card::before {
   content: '';
@@ -234,10 +287,12 @@ ul { list-style: none; }
   height: 4px;
   background: linear-gradient(90deg, var(--royal-maroon), var(--gold), var(--royal-maroon));
 }
-.jharokha-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--gold);
+@media (hover: hover) {
+  .jharokha-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold);
+  }
 }
 
 /* ==========================================================================
@@ -260,7 +315,7 @@ ul { list-style: none; }
   background: var(--royal-maroon-dark);
   color: var(--gold-light);
   padding: 0.5rem 0;
-  font-size: 0.85rem;
+  font-size: clamp(0.8rem, 1vw, 0.88rem);
   font-weight: 500;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -268,17 +323,21 @@ ul { list-style: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 .contact-pills {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
   align-items: center;
+  flex-wrap: wrap;
 }
 .contact-pills a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   color: var(--ivory);
+  min-height: 28px;
 }
 .contact-pills a:hover { color: var(--gold); }
 
@@ -292,24 +351,25 @@ ul { list-style: none; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: clamp(0.5rem, 1vw, 0.8rem);
+  min-height: 48px;
 }
 .logo-icon {
-  width: 48px;
-  height: 48px;
+  width: clamp(40px, 4vw, 48px);
+  height: clamp(40px, 4vw, 48px);
   background: linear-gradient(135deg, var(--royal-maroon), var(--gold));
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--ivory);
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   border: 2px solid var(--gold);
   box-shadow: 0 4px 10px rgba(106, 27, 41, 0.3);
 }
 .logo-img {
-  width: 56px;
-  height: 56px;
+  width: clamp(44px, 4.5vw, 56px);
+  height: clamp(44px, 4.5vw, 56px);
   object-fit: cover;
   border-radius: 10px;
   border: 2px solid var(--gold);
@@ -317,8 +377,10 @@ ul { list-style: none; }
   background: #fff;
   transition: transform 0.3s ease;
 }
-.logo:hover .logo-img {
-  transform: scale(1.06);
+@media (hover: hover) {
+  .logo:hover .logo-img {
+    transform: scale(1.06);
+  }
 }
 .logo-text {
   display: flex;
@@ -326,59 +388,77 @@ ul { list-style: none; }
 }
 .logo-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 800;
   color: var(--royal-maroon);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1.1;
 }
 .logo-tagline {
-  font-size: 0.72rem;
+  font-size: clamp(0.65rem, 1vw, 0.72rem);
   color: var(--dark-brown);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   font-weight: 600;
 }
 
 .nav-menu {
   display: flex;
-  gap: 1.6rem;
+  gap: clamp(1rem, 1.5vw, 1.6rem);
   align-items: center;
 }
 .nav-link {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: clamp(0.88rem, 1vw, 0.95rem);
   color: var(--dark-brown);
   position: relative;
   padding: 0.5rem 0;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
 }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 6px;
   left: 0;
   width: 0;
   height: 2px;
   background: var(--royal-maroon);
   transition: var(--transition);
 }
-.nav-link:hover::after, .nav-link.active::after {
-  width: 100%;
+@media (hover: hover) {
+  .nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+  }
 }
 .nav-link:hover, .nav-link.active {
   color: var(--royal-maroon);
 }
 
 /* Nav Dropdown */
-.nav-item-dropdown:hover .nav-dropdown-menu {
-  display: block !important;
+.nav-item-dropdown {
+  position: relative;
+  display: inline-block;
 }
-.nav-dropdown-menu a:hover {
-  background: var(--sandstone-light);
-  color: var(--royal-maroon) !important;
-  padding-left: 1.5rem !important;
+@media (min-width: 1181px) {
+  .nav-item-dropdown:hover .nav-dropdown-menu {
+    display: block !important;
+  }
+}
+.nav-dropdown-menu a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   transition: all 0.25s ease;
+}
+@media (hover: hover) {
+  .nav-dropdown-menu a:hover {
+    background: var(--sandstone-light);
+    color: var(--royal-maroon) !important;
+    padding-left: 1.5rem !important;
+  }
 }
 
 .hamburger {
@@ -388,6 +468,11 @@ ul { list-style: none; }
   font-size: 1.8rem;
   color: var(--royal-maroon);
   cursor: pointer;
+  min-width: 48px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
 }
 
 /* ==========================================================================
@@ -395,11 +480,11 @@ ul { list-style: none; }
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 88vh;
-  padding: 140px 0 80px;
+  min-height: clamp(550px, 85vh, 850px);
+  padding: clamp(110px, 12vh, 150px) 0 clamp(60px, 8vh, 80px);
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, rgba(22, 18, 16, 0.75), rgba(106, 27, 41, 0.7)), url('/assets/images/hero-banner.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(22, 18, 16, 0.78), rgba(106, 27, 41, 0.72)), url('/assets/images/hero-banner.jpg') center/cover no-repeat;
   color: var(--ivory);
   overflow: hidden;
 }
@@ -416,8 +501,8 @@ ul { list-style: none; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3.5rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 3.5vw, 3.5rem);
   align-items: center;
   position: relative;
   z-index: 3;
@@ -429,7 +514,7 @@ ul { list-style: none; }
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 .hero-content p {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
   color: var(--sandstone-light);
   margin-bottom: 2rem;
   max-width: 580px;
@@ -437,15 +522,16 @@ ul { list-style: none; }
 
 .hero-features {
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
   margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 .hero-feature-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: clamp(0.88rem, 1.1vw, 0.95rem);
   color: var(--gold-light);
 }
 .hero-feature-item i {
@@ -458,17 +544,19 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   color: var(--gold);
+  flex-shrink: 0;
 }
 
 /* Quick Booking Box */
 .quick-booking-box {
   background: var(--ivory-pure);
   border-radius: var(--radius-lg);
-  padding: 2.2rem;
+  padding: clamp(1.4rem, 2.5vw, 2.2rem);
   box-shadow: var(--shadow-lg);
   border: 2px solid var(--gold);
   color: var(--text-dark);
   position: relative;
+  width: 100%;
 }
 .quick-booking-box::before {
   content: '✦ ROYAL RAJASTHAN BOOKING ✦';
@@ -479,7 +567,7 @@ ul { list-style: none; }
   background: var(--royal-maroon);
   color: var(--gold-light);
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: clamp(0.68rem, 1vw, 0.75rem);
   font-weight: 700;
   padding: 0.25rem 1rem;
   border-radius: var(--radius-full);
@@ -494,12 +582,14 @@ ul { list-style: none; }
   border-bottom: 2px solid var(--border-subtle);
   padding-bottom: 0.75rem;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .booking-tab {
   flex: 1;
-  padding: 0.6rem 0.8rem;
+  padding: 0.7rem 0.9rem;
+  min-height: 44px;
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 1vw, 0.82rem);
   font-weight: 700;
   background: transparent;
   border: none;
@@ -508,6 +598,7 @@ ul { list-style: none; }
   border-radius: var(--radius-sm);
   transition: var(--transition);
   white-space: nowrap;
+  touch-action: manipulation;
 }
 .booking-tab.active, .booking-tab:hover {
   background: var(--royal-maroon);
@@ -527,11 +618,12 @@ ul { list-style: none; }
 }
 .form-input, .form-select {
   width: 100%;
+  min-height: 48px;
   padding: 0.85rem 1rem;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: var(--text-dark);
   background: #FFF;
   transition: var(--transition);
@@ -551,7 +643,7 @@ ul { list-style: none; }
    SECTION COMMON STYLES
    ========================================================================== */
 .section-padding {
-  padding: 90px 0;
+  padding: var(--spacing-section-py) 0;
   position: relative;
 }
 .section-bg-sand { background-color: var(--sandstone-light); }
@@ -564,18 +656,18 @@ ul { list-style: none; }
 /* Grid Layouts */
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-grid-gap);
 }
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.8rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--spacing-grid-gap);
 }
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-grid-gap);
 }
 
 /* Fleet Card */
@@ -588,17 +680,21 @@ ul { list-style: none; }
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
-.fleet-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--gold);
+@media (hover: hover) {
+  .fleet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold);
+  }
 }
 .fleet-img-wrap {
   position: relative;
-  height: 220px;
+  height: clamp(180px, 22vw, 220px);
   overflow: hidden;
   background: linear-gradient(135deg, #EAE5DE, #D6CEBE);
+  flex-shrink: 0;
 }
 .fleet-img-wrap img {
   width: 100%;
@@ -606,8 +702,10 @@ ul { list-style: none; }
   object-fit: cover;
   transition: transform 0.6s ease;
 }
-.fleet-card:hover .fleet-img-wrap img {
-  transform: scale(1.08);
+@media (hover: hover) {
+  .fleet-card:hover .fleet-img-wrap img {
+    transform: scale(1.08);
+  }
 }
 .fleet-badge {
   position: absolute;
@@ -623,7 +721,7 @@ ul { list-style: none; }
   border: 1px solid var(--gold);
 }
 .fleet-content {
-  padding: 1.6rem;
+  padding: clamp(1.2rem, 2vw, 1.6rem);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -631,6 +729,8 @@ ul { list-style: none; }
 .fleet-specs {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin: 1rem 0;
   padding: 0.8rem 0;
   border-top: 1px dashed var(--border-subtle);
@@ -664,6 +764,8 @@ ul { list-style: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border-subtle);
 }
@@ -672,7 +774,7 @@ ul { list-style: none; }
   color: var(--royal-maroon);
 }
 .fleet-price-amount {
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
   font-weight: 800;
 }
 .fleet-price-unit {
@@ -688,15 +790,21 @@ ul { list-style: none; }
   border: 1px solid var(--border-gold);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-.tour-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+@media (hover: hover) {
+  .tour-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
 }
 .tour-img {
-  height: 240px;
+  height: clamp(190px, 25vw, 240px);
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .tour-img img {
   width: 100%;
@@ -704,7 +812,9 @@ ul { list-style: none; }
   object-fit: cover;
   transition: transform 0.6s ease;
 }
-.tour-card:hover .tour-img img { transform: scale(1.08); }
+@media (hover: hover) {
+  .tour-card:hover .tour-img img { transform: scale(1.08); }
+}
 .tour-duration {
   position: absolute;
   bottom: 12px;
@@ -722,12 +832,15 @@ ul { list-style: none; }
 .pricing-card {
   background: var(--ivory-pure);
   border-radius: var(--radius-md);
-  padding: 2.5rem 2rem;
+  padding: clamp(1.8rem, 3vw, 2.5rem) clamp(1.2rem, 2.5vw, 2rem);
   text-align: center;
   border: 1px solid var(--border-gold);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .pricing-card.featured {
   border: 2px solid var(--gold);
@@ -749,12 +862,12 @@ ul { list-style: none; }
   border-radius: var(--radius-full);
 }
 .pricing-title {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   margin-bottom: 0.5rem;
 }
 .pricing-amount {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   font-weight: 800;
   color: var(--royal-maroon);
   margin: 1.2rem 0;
@@ -762,6 +875,7 @@ ul { list-style: none; }
 .pricing-list {
   text-align: left;
   margin: 1.8rem 0;
+  flex: 1;
 }
 .pricing-list li {
   padding: 0.6rem 0;
@@ -776,10 +890,13 @@ ul { list-style: none; }
 .testimonial-card {
   background: #FFF;
   border-radius: var(--radius-md);
-  padding: 2rem;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
   border: 1px solid var(--border-gold);
   box-shadow: var(--shadow-sm);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .stars {
   color: var(--gold);
@@ -788,14 +905,16 @@ ul { list-style: none; }
 }
 .testimonial-quote {
   font-style: italic;
-  font-size: 0.98rem;
+  font-size: clamp(0.92rem, 1.2vw, 0.98rem);
   color: var(--text-dark);
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: auto;
 }
 .author-avatar {
   width: 48px;
@@ -809,6 +928,26 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Gallery & Blog Cards */
+.gallery-card, .blog-card {
+  background: var(--ivory-pure);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: var(--transition);
+}
+@media (hover: hover) {
+  .gallery-card:hover, .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
 }
 
 /* FAQ Accordion */
@@ -821,30 +960,33 @@ ul { list-style: none; }
 }
 .faq-question {
   width: 100%;
-  padding: 1.25rem 1.5rem;
+  padding: clamp(1rem, 2vw, 1.25rem) clamp(1rem, 2.5vw, 1.5rem);
+  min-height: 54px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: transparent;
   border: none;
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   font-weight: 700;
   color: var(--dark-brown);
   text-align: left;
   cursor: pointer;
+  gap: 1rem;
+  touch-action: manipulation;
 }
 .faq-answer {
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 2.5vw, 1.5rem);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: clamp(0.88rem, 1.2vw, 0.95rem);
 }
 .faq-item.active .faq-answer {
-  padding: 0 1.5rem 1.25rem;
-  max-height: 500px;
+  padding: 0 clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 2vw, 1.25rem);
+  max-height: 600px;
 }
 .faq-item.active .faq-question i {
   transform: rotate(180deg);
@@ -857,19 +999,19 @@ ul { list-style: none; }
 .site-footer {
   background: var(--dark-charcoal);
   color: var(--sandstone-light);
-  padding: 80px 0 30px;
+  padding: clamp(60px, 8vw, 80px) 0 30px;
   border-top: 4px solid var(--gold);
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: 3rem;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: clamp(2rem, 3vw, 3rem);
   margin-bottom: 3rem;
 }
 .footer-title {
   color: var(--gold);
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
@@ -884,25 +1026,33 @@ ul { list-style: none; }
   background: var(--gold);
 }
 .footer-links li { margin-bottom: 0.75rem; }
-.footer-links a:hover {
-  color: var(--gold);
-  padding-left: 5px;
+.footer-links a {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+@media (hover: hover) {
+  .footer-links a:hover {
+    color: var(--gold);
+    padding-left: 5px;
+  }
 }
 .footer-contact li {
   display: flex;
   gap: 0.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-size: 0.92rem;
 }
 .footer-contact i {
   color: var(--gold);
   margin-top: 4px;
+  flex-shrink: 0;
 }
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
   border-top: 1px solid rgba(212, 175, 55, 0.15);
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 1.2vw, 0.85rem);
 }
 
 /* Floating WhatsApp Button */
@@ -922,10 +1072,13 @@ ul { list-style: none; }
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   z-index: 1000;
   transition: transform 0.3s ease;
+  touch-action: manipulation;
 }
-.floating-whatsapp:hover {
-  transform: scale(1.1) rotate(8deg);
-  background-color: #1EBE5D;
+@media (hover: hover) {
+  .floating-whatsapp:hover {
+    transform: scale(1.1) rotate(8deg);
+    background-color: #1EBE5D;
+  }
 }
 
 /* Sticky Mobile Call Bar */
@@ -950,10 +1103,12 @@ ul { list-style: none; }
   justify-content: center;
   gap: 0.6rem;
   padding: 0.9rem;
+  min-height: 48px;
   color: #FFF;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  touch-action: manipulation;
 }
 .sticky-btn.call-btn { background: var(--royal-maroon); }
 .sticky-btn.wa-btn { background: #25D366; }
@@ -967,6 +1122,7 @@ ul { list-style: none; }
   height: 100%;
   background: rgba(22, 18, 16, 0.85);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -974,6 +1130,7 @@ ul { list-style: none; }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  padding: 1rem;
 }
 .modal-overlay.active {
   opacity: 1;
@@ -982,24 +1139,31 @@ ul { list-style: none; }
 .modal-box {
   background: var(--ivory-pure);
   border-radius: var(--radius-lg);
-  width: 90%;
+  width: 100%;
   max-width: 600px;
-  padding: 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   border: 2px solid var(--gold);
   box-shadow: var(--shadow-lg);
   position: relative;
   max-height: 90vh;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .modal-close {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 14px;
+  right: 14px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--text-muted);
   cursor: pointer;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
 }
 
 /* Toast Notification */
@@ -1021,52 +1185,104 @@ ul { list-style: none; }
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .toast-notice.show { transform: translateX(0); }
+
+/* Responsive Tables with Horizontal Touch Scrolling */
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-gold);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+th {
+  background: var(--sandstone-light);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--dark-brown);
+}
+
 /* ==========================================================================
-   UNIVERSAL 5-TIER ZERO-OVERFLOW & EXACT-FIT ENGINE (4K to 320px)
+   14-TIER UNIVERSAL EXACT BREAKPOINT ENGINE (2560px to 320px)
    ========================================================================== */
 
-/* 1. Ultra-Wide & 4K High-Resolution Displays (min-width: 1600px) */
-@media (min-width: 1600px) {
-  body {
-    font-size: 17px;
+/* 1. Ultra-Wide & 4K High-Resolution Displays (min-width: 2560px) */
+@media (min-width: 2560px) {
+  html { font-size: 18px; }
+  .container {
+    max-width: 2000px !important;
   }
+  .nav-container { height: 96px; }
+}
+
+/* 2. 2K & Large Monitors (min-width: 1920px and max-width: 2559px) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  html { font-size: 16px; }
+  .container {
+    max-width: 1680px !important;
+  }
+}
+
+/* 3. Large Laptops / MacBook Pro 16 (min-width: 1536px and max-width: 1919px) */
+@media (min-width: 1536px) and (max-width: 1919px) {
+  html { font-size: 15px; }
   .container {
     max-width: 1440px !important;
-    margin: 0 auto !important;
   }
 }
 
-/* 2. PC & Medium Laptops (min-width: 1181px and max-width: 1400px) */
-@media (min-width: 1181px) and (max-width: 1400px) {
-  .nav-menu {
-    gap: 0.85rem !important;
-  }
-  .nav-link {
-    font-size: 0.88rem !important;
-  }
-  .logo-img {
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .logo-title {
-    font-size: 1.22rem !important;
+/* 4. Standard Desktop (min-width: 1440px and max-width: 1535px) */
+@media (min-width: 1440px) and (max-width: 1535px) {
+  html { font-size: 14.5px; }
+  .container {
+    max-width: 1320px !important;
   }
 }
 
-/* 3. iPad Pro, Tablets & Small Laptops (max-width: 1180px) */
-@media (max-width: 1180px) {
-  /* Enforce Hamburger Drawer on all iPads & Tablets so 11 nav items never overflow or wrap */
+/* 5. Standard Laptops / MacBook Air (min-width: 1280px and max-width: 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  html { font-size: 14px; }
+  .container {
+    max-width: 1200px !important;
+  }
+  .nav-menu { gap: 1.2rem; }
+  .nav-link { font-size: 0.9rem; }
+}
+
+/* 6. Small Laptops / iPad Pro Landscape (min-width: 1024px and max-width: 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  html { font-size: 13.8px; }
+  .container {
+    max-width: 980px !important;
+  }
+  .nav-menu { gap: 0.8rem; }
+  .nav-link { font-size: 0.85rem; }
+  .logo-img { width: 44px; height: 44px; }
+  .logo-title { font-size: 1.2rem; }
+}
+
+/* 7. Tablets Landscape / iPad Air & Pro Portrait (max-width: 1023px) */
+@media (max-width: 1023px) {
+  /* Activate Compact Drawer Navigation for Tablets & iPad so 11 items never wrap */
   .hamburger {
-    display: block !important;
-    font-size: 1.6rem !important;
-    padding: 0.4rem !important;
+    display: flex !important;
     margin-left: auto !important;
   }
   .header-top { display: none !important; }
 
   .nav-container {
     height: 74px !important;
-    padding: 0 1.25rem !important;
+    padding: 0 1.5rem !important;
   }
   .logo-img {
     width: 44px !important;
@@ -1080,21 +1296,24 @@ ul { list-style: none; }
   .nav-menu {
     position: fixed;
     top: 74px;
-    left: -100%;
+    right: 0;
+    left: auto;
     width: 85%;
     max-width: 360px;
     height: calc(100vh - 74px);
     background: var(--glass-dark);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 1.8rem 1.5rem;
+    padding: 1.8rem 1.5rem 4rem;
     align-items: flex-start;
     overflow-y: auto;
-    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 5px 0 25px rgba(0,0,0,0.6);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.6);
     z-index: 1500;
   }
-  .nav-menu.open { left: 0 !important; }
+  .nav-menu.open { transform: translateX(0) !important; }
   .nav-link {
     color: var(--ivory) !important;
     font-size: 1.1rem !important;
@@ -1103,14 +1322,14 @@ ul { list-style: none; }
     border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
   }
 
-  /* Mobile Dropdown Menu Drawer Integration */
+  /* Mobile/Tablet Dropdown Drawer Submenu */
   .nav-item-dropdown {
     position: static !important;
     width: 100% !important;
   }
   .nav-dropdown-menu {
     position: static !important;
-    display: block !important;
+    display: none;
     width: 100% !important;
     box-shadow: none !important;
     border: none !important;
@@ -1119,219 +1338,206 @@ ul { list-style: none; }
     padding: 0.2rem 0 0.5rem 0.8rem !important;
     margin: 0.4rem 0 !important;
   }
+  .nav-item-dropdown.open .nav-dropdown-menu {
+    display: block !important;
+  }
   .nav-dropdown-menu a {
     color: var(--ivory) !important;
-    padding: 0.5rem 0.8rem !important;
-    font-size: 0.92rem !important;
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.95rem !important;
     border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
   }
 
-  /* Grids collapse gracefully on Tablet / iPad */
+  /* Tablet Grid Collapses to 2 Columns */
   .grid-4, .grid-3 {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 1.5rem !important;
   }
-  .hero-grid, .footer-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
-  }
-  [style*="grid-template-columns: 1fr 1.6fr"],
-  [style*="grid-template-columns: 1fr 1.5fr"] {
+  .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 2.5rem !important;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2.5rem !important;
+  }
+  /* Override inline split layouts across pages on Tablet */
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.8rem !important;
   }
 }
 
-/* 4. Mobile Phones & Tablets Portrait (max-width: 768px) */
-@media (max-width: 768px) {
-  /* Enforce Document Root Bounds */
+/* 8. Tablets Portrait (min-width: 768px and max-width: 819px) */
+@media (min-width: 768px) and (max-width: 819px) {
+  .container {
+    padding: 0 1.5rem !important;
+  }
+  .hero-section {
+    padding: 120px 0 60px !important;
+  }
+}
+
+/* 9. Mobile Phones & Tablets Portrait (< 768px) */
+@media (max-width: 767px) {
   html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100vw !important;
+    font-size: 13.5px !important;
   }
-
-  /* Universal Child Element Boundary Protection */
-  * {
-    max-width: 100%;
-  }
-  img, video, canvas, svg, iframe {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-  p, h1, h2, h3, h4, h5, h6, span, a, li, td, th {
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* Navigation Header Compact Exact Fit */
-  .site-header {
-    width: 100% !important;
-    max-width: 100vw !important;
+  .container {
+    padding: 0 1.2rem !important;
   }
   .nav-container {
     height: 68px !important;
-    padding: 0 1rem !important;
+    padding: 0 1.2rem !important;
   }
-  .logo {
-    gap: 0.5rem !important;
-  }
-  .logo-img {
-    width: 40px !important;
-    height: 40px !important;
-  }
-  .logo-title {
-    font-size: 1.15rem !important;
-    letter-spacing: 0px !important;
-    line-height: 1.1 !important;
-  }
-  .logo-tagline {
-    font-size: 0.65rem !important;
-    letter-spacing: 1px !important;
-  }
-  .nav-menu {
-    top: 68px !important;
-    height: calc(100vh - 68px) !important;
-  }
+  .logo { gap: 0.5rem !important; }
+  .logo-img { width: 40px !important; height: 40px !important; }
+  .logo-title { font-size: 1.15rem !important; line-height: 1.1 !important; }
+  .logo-tagline { font-size: 0.65rem !important; letter-spacing: 1px !important; }
+  .nav-menu { top: 68px !important; height: calc(100vh - 68px) !important; }
 
-  /* Universal Grid Collapse & Font Scale for Mobile */
-  html, body {
-    font-size: 13.5px !important;
-    overflow-x: hidden !important;
+  /* Universal Single Column Stack on Mobile (<768px) */
+  .grid-4, .grid-3, .grid-2, .grid-split-3, .grid-split-2, .contact-split, .footer-grid,
+  [style*="display: grid"], [style*="display:grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.4rem !important;
     width: 100% !important;
-    max-width: 100vw !important;
   }
 
-  .grid-4, .grid-3, .grid-2, .grid-split-3, .grid-split-2, .contact-split, .hero-grid, .footer-grid, [style*="display: grid"], [style*="display:grid"] {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
+  /* Override all inline multi-column styles on Mobile */
+  [style*="grid-template-columns:"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.4rem !important;
   }
 
-  /* Override all inline multi-column styles across packages, bookings, and regional hubs */
-  [style*="grid-template-columns: 1fr 1.6fr"],
-  [style*="grid-template-columns: 1fr 1fr"],
-  [style*="grid-template-columns: 1fr 1fr 1fr"],
-  [style*="grid-template-columns: 1.15fr 0.85fr"],
-  [style*="grid-template-columns: repeat(auto-fill"] {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-  }
-
-  /* Responsive Flex Wrapping & Containers */
-  .container {
-    padding: 0 1rem !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-  }
-  .hero-features, .stats-bar, .contact-pills, .fleet-specs, .fleet-footer, .testimonial-author, .author-avatar, .header-top-container, [style*="display: flex"][style*="justify-content: space-between"], [style*="display: flex"][style*="gap"] {
-    flex-wrap: wrap !important;
-    max-width: 100% !important;
-  }
-  .fleet-specs span {
-    white-space: normal !important;
-  }
-
-  /* Responsive Typography & Hero Adjustments */
+  /* Hero Adjustments */
   .hero-section {
-    padding: 90px 0 45px !important;
+    padding: 95px 0 50px !important;
     min-height: auto !important;
+  }
+  .hero-content { text-align: center; }
+  .hero-features {
+    justify-content: center;
+    gap: 1.2rem;
+  }
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-content .btn, .quick-booking-box .btn {
     width: 100% !important;
-    overflow: hidden !important;
   }
-  .hero-content h1 {
-    font-size: 1.65rem !important;
-    line-height: 1.22 !important;
-  }
-  .section-title {
-    font-size: 1.45rem !important;
-  }
+
   .pricing-card.featured { transform: none !important; }
 
-  /* Card and Box Exact Fit & Negative Margin DOM Overflow Override */
+  /* Cards & Boxes Exact Fit */
   .jharokha-card, .quick-booking-box, .pricing-card, .modal-box, .fleet-card, .tour-card, .gallery-card, .faq-item {
     width: 100% !important;
     max-width: 100% !important;
-    min-width: 0 !important;
-    padding: 1.25rem !important;
-    box-sizing: border-box !important;
-    overflow-wrap: break-word !important;
-    word-break: break-word !important;
+    padding: 1.4rem !important;
   }
   .jharokha-card > div[style*="margin: -"],
   .jharokha-card > div[style*="margin:-"] {
-    margin: -1.25rem -1.25rem 1rem -1.25rem !important;
-    width: calc(100% + 2.5rem) !important;
-    max-width: calc(100% + 2.5rem) !important;
+    margin: -1.4rem -1.4rem 1.2rem -1.4rem !important;
+    width: calc(100% + 2.8rem) !important;
+    max-width: calc(100% + 2.8rem) !important;
   }
   .booking-tabs {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
     flex-wrap: nowrap !important;
-  }
-
-  /* Responsive Tables with Horizontal Touch Scrolling */
-  .table-responsive, [style*="overflow-x: auto"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    display: block !important;
-    margin-bottom: 1rem !important;
-  }
-  table {
-    width: 100% !important;
-    min-width: 500px !important;
   }
 
   /* Prevent iOS Safari Automatic Zoom on Inputs */
   input, select, textarea {
     font-size: 16px !important;
   }
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
 
-  /* Floating Action Buttons & Spacing */
-  body { padding-bottom: 65px !important; }
+  /* Sticky Mobile Call Bar & Floating Action Spacing */
+  body { padding-bottom: 68px !important; }
   .sticky-mobile-call {
     display: block !important;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2999;
-  }
-  .sticky-mobile-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-  }
-  .sticky-btn {
-    padding: 0.7rem 0.3rem !important;
-    font-size: 0.78rem !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
   }
   .floating-whatsapp {
-    bottom: 75px !important;
-    right: 15px !important;
+    bottom: 78px !important;
+    right: 16px !important;
+    width: 54px;
+    height: 54px;
+    font-size: 1.8rem;
   }
   .toast-notice {
     top: auto;
     bottom: 85px;
-    right: 15px;
-    left: 15px;
+    right: 16px;
+    left: 16px;
     width: auto;
     justify-content: center;
   }
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-/* 5. Small & Narrow Mobile Devices (max-width: 480px / 360px iPhone SE & Galaxy Fold) */
-@media (max-width: 480px) {
+/* 10. Large Phones Landscape / Foldables Unfolded / Small Tablets (min-width: 640px and max-width: 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Allow 2 columns on wide phones/tablets for cards */
+  .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    text-align: left !important;
+  }
+  .footer-title::after {
+    left: 0 !important;
+    transform: none !important;
+  }
+}
+
+/* 11. Standard Phones Landscape / Large Phones Portrait (min-width: 480px and max-width: 639px) */
+@media (min-width: 480px) and (max-width: 639px) {
+  .container {
+    padding: 0 1.1rem !important;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.7rem, 5.5vw, 2.1rem) !important;
+  }
+}
+
+/* 12. iPhone 15 / Pro / Plus / Pixel (min-width: 414px and max-width: 479px) */
+@media (min-width: 414px) and (max-width: 479px) {
+  .container {
+    padding: 0 1rem !important;
+  }
+  .jharokha-card, .quick-booking-box, .pricing-card {
+    padding: 1.25rem !important;
+  }
+}
+
+/* 13. iPhone 12/13/14/15 / Galaxy S23 (min-width: 390px and max-width: 413px) */
+@media (min-width: 390px) and (max-width: 413px) {
+  .container {
+    padding: 0 0.9rem !important;
+  }
+}
+
+/* 14. iPhone X / 11 / Standard Mobile (min-width: 375px and max-width: 389px) */
+@media (min-width: 375px) and (max-width: 389px) {
+  .container {
+    padding: 0 0.85rem !important;
+  }
+  .btn {
+    padding: 0.75rem 1.2rem !important;
+  }
+}
+
+/* 15. Small & Narrow Mobile Devices (max-width: 374px / iPhone SE 320px & Fold Cover Screens) */
+@media (max-width: 374px) {
   html, body {
     font-size: 12.5px !important;
   }
@@ -1346,16 +1552,13 @@ ul { list-style: none; }
     height: 32px !important;
   }
   .logo-title {
-    font-size: 1.0rem !important;
+    font-size: 1.05rem !important;
   }
   .logo-tagline {
-    font-size: 0.56rem !important;
+    font-size: 0.58rem !important;
   }
   .hero-content h1 {
     font-size: 1.45rem !important;
-  }
-  .section-title {
-    font-size: 1.3rem !important;
   }
   .jharokha-card, .quick-booking-box, .pricing-card, .modal-box, .fleet-card, .tour-card, .gallery-card, .faq-item {
     padding: 1rem !important;
@@ -1367,16 +1570,17 @@ ul { list-style: none; }
     max-width: calc(100% + 2rem) !important;
   }
   .btn {
-    padding: 0.6rem 1.0rem !important;
+    width: 100% !important;
+    padding: 0.7rem 1rem !important;
     font-size: 0.82rem !important;
   }
   .modal-box {
     width: 95% !important;
-    padding: 1.5rem 1rem !important;
+    padding: 1.2rem 0.9rem !important;
     max-height: 85vh !important;
   }
-  .footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
+  .sticky-btn {
+    font-size: 0.8rem !important;
+    padding: 0.75rem 0.4rem !important;
   }
 }

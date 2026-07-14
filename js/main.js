@@ -39,14 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
     modalContainer.innerHTML = renderBookingModal();
   }
 
-  // 2. Hamburger Mobile Menu Toggle
   // 2. Hamburger Mobile & Tablet Menu Toggle
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');
   if (hamburgerBtn && navMenu) {
     hamburgerBtn.addEventListener('click', (e) => {
       e.stopPropagation();
+      const isOpen = navMenu.classList.contains('open');
       navMenu.classList.toggle('open');
+      hamburgerBtn.setAttribute('aria-expanded', !isOpen);
       const icon = hamburgerBtn.querySelector('i');
       if (icon) {
         icon.classList.toggle('fa-bars');
@@ -54,10 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when clicking any nav link inside
+    // Close menu when clicking any nav link inside (except dropdown toggle on mobile)
     navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        if (link.id === 'tourPackagesDropdownToggle' && window.innerWidth <= 1024) {
+          return; // Handled by dropdown accordion toggle below
+        }
         navMenu.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
         const icon = hamburgerBtn.querySelector('i');
         if (icon) {
           icon.classList.add('fa-bars');
@@ -70,11 +75,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
       if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
         navMenu.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
         const icon = hamburgerBtn.querySelector('i');
         if (icon) {
           icon.classList.add('fa-bars');
           icon.classList.remove('fa-times');
         }
+      }
+    });
+  }
+
+  // 2b. Mobile & Tablet Dropdown Accordion Toggle
+  const dropdownToggle = document.getElementById('tourPackagesDropdownToggle');
+  const dropdownContainer = document.getElementById('navDropdownContainer');
+  if (dropdownToggle && dropdownContainer) {
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = dropdownContainer.classList.contains('open');
+        dropdownContainer.classList.toggle('open');
+        dropdownToggle.setAttribute('aria-expanded', !isOpen);
       }
     });
   }
