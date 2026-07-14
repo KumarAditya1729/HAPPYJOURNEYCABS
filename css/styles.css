@@ -54,6 +54,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
 }
 
 body {
@@ -61,7 +64,9 @@ body {
   background-color: var(--ivory);
   color: var(--text-dark);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
   position: relative;
   background-image: radial-gradient(var(--border-gold) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -1048,14 +1053,67 @@ ul { list-style: none; }
 
 /* 3. Mobile Phones & Small Tablets (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Enforce Document Root Bounds */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Universal Child Element Boundary Protection */
+  * {
+    max-width: 100%;
+  }
+  img, video, canvas, svg, iframe {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  p, h1, h2, h3, h4, h5, h6, span, a, li, td, th {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Navigation Header Compact Exact Fit */
+  .site-header {
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  .nav-container {
+    height: 68px !important;
+    padding: 0 1rem !important;
+  }
+  .logo {
+    gap: 0.5rem !important;
+  }
+  .logo-img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .logo-title {
+    font-size: 1.15rem !important;
+    letter-spacing: 0px !important;
+    line-height: 1.1 !important;
+  }
+  .logo-tagline {
+    font-size: 0.65rem !important;
+    letter-spacing: 1px !important;
+  }
+  .hamburger {
+    display: block !important;
+    font-size: 1.5rem !important;
+    padding: 0.4rem !important;
+    margin-left: auto !important;
+  }
+  .header-top { display: none !important; }
+
   /* Navigation & Hamburger Menu Drawer */
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 68px;
     left: -100%;
     width: 85%;
     max-width: 340px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 68px);
     background: var(--glass-dark);
     backdrop-filter: blur(20px);
     flex-direction: column;
@@ -1074,8 +1132,6 @@ ul { list-style: none; }
     padding: 0.85rem 0;
     border-bottom: 1px solid rgba(212, 175, 55, 0.15);
   }
-  .hamburger { display: block; }
-  .header-top { display: none; }
 
   /* Mobile Dropdown Menu Drawer Integration */
   .nav-item-dropdown {
@@ -1105,50 +1161,75 @@ ul { list-style: none; }
   }
 
   /* Universal Grid Collapse for Mobile */
-  .grid-4, .grid-3, .grid-2, .grid-split-3, .grid-split-2, .contact-split {
+  .grid-4, .grid-3, .grid-2, .grid-split-3, .grid-split-2, .contact-split, .hero-grid, .footer-grid, [style*="display: grid"], [style*="display:grid"] {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 1.25rem !important;
   }
 
   /* Override all inline multi-column styles across packages, bookings, and regional hubs */
   [style*="grid-template-columns: 1fr 1.6fr"],
   [style*="grid-template-columns: 1fr 1fr"],
   [style*="grid-template-columns: 1fr 1fr 1fr"],
-  [style*="grid-template-columns: 1.15fr 0.85fr"] {
+  [style*="grid-template-columns: 1.15fr 0.85fr"],
+  [style*="grid-template-columns: repeat(auto-fill"] {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
   }
 
-  /* Responsive Flex Wrapping */
-  .hero-features, .stats-bar, [style*="display: flex"][style*="justify-content: space-between"] {
+  /* Responsive Flex Wrapping & Containers */
+  .container {
+    padding: 0 1rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  .hero-features, .stats-bar, .contact-pills, [style*="display: flex"][style*="justify-content: space-between"], [style*="display: flex"][style*="gap"] {
     flex-wrap: wrap !important;
-    gap: 1rem !important;
+    max-width: 100% !important;
   }
 
   /* Responsive Typography & Hero Adjustments */
   .hero-section {
-    padding: 110px 0 50px !important;
+    padding: 100px 0 50px !important;
     min-height: auto !important;
+    width: 100% !important;
+    overflow: hidden !important;
   }
   .hero-content h1 {
-    font-size: 2rem !important;
+    font-size: 1.85rem !important;
     line-height: 1.25 !important;
   }
   .section-title {
-    font-size: 1.8rem !important;
+    font-size: 1.65rem !important;
   }
-  .pricing-card.featured { transform: none; }
+  .pricing-card.featured { transform: none !important; }
+
+  /* Card and Box Exact Fit */
+  .jharokha-card, .quick-booking-box, .pricing-card, .modal-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.25rem !important;
+    box-sizing: border-box !important;
+  }
+  .booking-tabs {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+  }
 
   /* Responsive Tables with Horizontal Touch Scrolling */
   .table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
   }
   table {
-    width: 100%;
-    min-width: 520px;
+    width: 100% !important;
+    min-width: 500px !important;
   }
 
   /* Prevent iOS Safari Automatic Zoom on Inputs */
@@ -1183,27 +1264,37 @@ ul { list-style: none; }
 /* 4. Small & Narrow Mobile Devices (max-width: 480px / 360px iPhone SE & Galaxy Fold) */
 @media (max-width: 480px) {
   .container {
-    padding: 0 1rem !important;
+    padding: 0 0.75rem !important;
   }
   .hero-section {
-    padding: 100px 0 40px !important;
+    padding: 95px 0 40px !important;
+  }
+  .logo-img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .logo-title {
+    font-size: 1.05rem !important;
+  }
+  .logo-tagline {
+    font-size: 0.58rem !important;
   }
   .hero-content h1 {
-    font-size: 1.65rem !important;
+    font-size: 1.55rem !important;
   }
   .section-title {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
   }
   .jharokha-card, .quick-booking-box, .modal-box {
-    padding: 1.2rem !important;
+    padding: 1rem !important;
   }
   .btn {
-    padding: 0.7rem 1.2rem !important;
-    font-size: 0.9rem !important;
+    padding: 0.65rem 1.1rem !important;
+    font-size: 0.85rem !important;
   }
   .modal-box {
     width: 95% !important;
-    padding: 1.5rem 1.2rem !important;
+    padding: 1.5rem 1rem !important;
     max-height: 85vh !important;
   }
   .footer-grid {
