@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Photo Gallery — Happy Journey Cabs | Fleet, Palaces & Desert Safaris</title>
+  <meta name="description" content="Explore real travel moments, pristine vehicle fleet interiors, Maharaja Tempo Travellers, and royal Rajasthan fort destinations with Happy Journey Cabs.">
+  <meta name="keywords" content="Happy Journey Cabs Gallery, Rajasthan Taxi Photos, Innova Crysta Interior Photos, Tempo Traveller Photos, Jaisalmer Desert Safari Images">
+  <link rel="canonical" href="https://happyjourneycabs.com/gallery.html">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Royal Photo Gallery — Happy Journey Cabs">
+  <meta property="og:description" content="Take a visual tour of our spotless vehicles and majestic Rajasthan destinations.">
+  <meta property="og:image" content="https://happyjourneycabs.com/assets/images/hero-banner.jpg">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.8rem;
+    }
+    .gallery-card {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      background: var(--ivory);
+      transition: var(--transition-medium);
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-caption {
+      padding: 1.2rem;
+      background: var(--sandstone-light);
+      border-top: 2px solid var(--gold);
+    }
+    .gallery-caption h4 {
+      font-size: 1.1rem;
+      color: var(--dark-brown);
+      margin-bottom: 0.3rem;
+    }
+    .gallery-caption p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Header -->
+  <div id="header-container" data-active="gallery"></div>
+
+  <!-- Page Banner -->
+  <section class="hero-section" style="min-height: 45vh; padding: 130px 0 60px; background: linear-gradient(135deg, rgba(22, 18, 16, 0.85), rgba(106, 27, 41, 0.8)), url('assets/images/fleet-showcase.jpg') center/cover no-repeat;">
+    <div class="container text-center">
+      <span class="royal-subtitle">✦ Visual Memories of Rajasthan ✦</span>
+      <h1 style="color: var(--ivory);">Our Royal Photo Gallery</h1>
+      <p style="color: var(--sandstone-light); max-width: 650px; margin: 0.8rem auto 0;">Take a glimpse at our well-maintained luxury fleet, happy guest groups, and the architectural wonders of the Land of Kings.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Filter Bar -->
+  <section class="section-padding" style="padding-bottom: 30px;">
+    <div class="container text-center">
+      <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;">
+        <button class="btn btn-primary gallery-filter-btn" data-filter="all" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">All Photos</button>
+        <button class="btn btn-outline gallery-filter-btn" data-filter="fleet" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">Spotless Vehicle Fleet</button>
+        <button class="btn btn-outline gallery-filter-btn" data-filter="palaces" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">Palaces & Heritage Forts</button>
+        <button class="btn btn-outline gallery-filter-btn" data-filter="safari" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">Desert Safari & Camping</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryContainer">
+        <!-- 1. Innova at Amber Fort -->
+        <div class="gallery-card gal-item" data-filter="fleet">
+          <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80" alt="Innova Crysta at Amber Fort Jaipur" onerror="this.src='assets/images/hero-banner.jpg'">
+          <div class="gallery-caption">
+            <h4>Toyota Innova Crysta at Amber Fort</h4>
+            <p>Our flagship 7-seater luxury cab waiting outside the golden arches of Jaipur's hilltop fortress.</p>
+          </div>
+        </div>
+
+        <!-- 2. Maharaja Tempo Traveller -->
+        <div class="gallery-card gal-item" data-filter="fleet">
+          <img src="assets/images/tempo_traveller_happy_journey_1784023468836.png" alt="Maharaja Pushback Tempo Traveller Interior" onerror="this.src='assets/images/tempo-traveller.jpg'">
+          <div class="gallery-caption">
+            <h4>16-Seater Maharaja Tempo Traveller</h4>
+            <p>Pristine white group tour van parked on the smooth golden highway outside Jaisalmer fort.</p>
+          </div>
+        </div>
+
+        <!-- 3. Royal Fleet Showcase -->
+        <div class="gallery-card gal-item" data-filter="fleet">
+          <img src="assets/images/car-dzire.png" alt="Happy Journey Cabs Royal Fleet Courtyard" onerror="this.src='assets/images/fleet-showcase.jpg'">
+          <div class="gallery-caption">
+            <h4>Fortuner & Dzire Fleet at Palace Courtyard</h4>
+            <p>High-contrast sunset showcase of our executive sedans and VIP SUVs outside Udaipur palace.</p>
+          </div>
+        </div>
+
+        <!-- 4. Hawa Mahal Sunset -->
+        <div class="gallery-card gal-item" data-filter="palaces">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80" alt="Hawa Mahal Palace of Winds Golden Hour" onerror="this.src='assets/images/hero-banner.jpg'">
+          <div class="gallery-caption">
+            <h4>The Pink City at Golden Hour</h4>
+            <p>Admiring the intricate 953 jharokha lattice windows of Hawa Mahal during a local city tour.</p>
+          </div>
+        </div>
+
+        <!-- 5. Jaisalmer Golden Fortress -->
+        <div class="gallery-card gal-item" data-filter="palaces">
+          <img src="assets/images/tour-jaisalmer.png" alt="Jaisalmer Golden Fort Sandstone Architecture" onerror="this.src='assets/images/fleet-showcase.jpg'">
+          <div class="gallery-caption">
+            <h4>The Living Fortress of Jaisalmer</h4>
+            <p>Exploring golden sandstone havelis and ancient lanes with our experienced local drivers.</p>
+          </div>
+        </div>
+
+        <!-- 6. Sam Sand Dunes Camel & Jeep -->
+        <div class="gallery-card gal-item" data-filter="safari">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="Sam Sand Dunes Luxury Camp & Safari Jaisalmer" onerror="this.src='assets/images/tempo-traveller.jpg'">
+          <div class="gallery-caption">
+            <h4>Thar Desert Safari Transfers</h4>
+            <p>Direct cab drop right to the sunset dunes and luxury Swiss tents of Jaisalmer.</p>
+          </div>
+        </div>
+
+        <!-- 7. Udaipur Lake Pichola Boat -->
+        <div class="gallery-card gal-item" data-filter="palaces">
+          <img src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?auto=format&fit=crop&w=800&q=80" alt="Lake Pichola Taj Lake Palace Udaipur Sightseeing" onerror="this.src='assets/images/hero-banner.jpg'">
+          <div class="gallery-caption">
+            <h4>Romantic Sunset at Lake Pichola</h4>
+            <p>Our Udaipur cab packages include direct drop and pickup right at the boat jetty.</p>
+          </div>
+        </div>
+
+        <!-- 8. VIP Fortuner Wedding Decoration -->
+        <div class="gallery-card gal-item" data-filter="fleet">
+          <img src="assets/images/car-fortuner.png" alt="VIP Toyota Fortuner Wedding Car Rental Jaipur" onerror="this.src='assets/images/fleet-showcase.jpg'">
+          <div class="gallery-caption">
+            <h4>Decorated VIP Wedding Fortuner</h4>
+            <p>Custom floral and satin ribbon decor ready for royal destination weddings across Rajasthan.</p>
+          </div>
+        </div>
+
+        <!-- 9. Group Tour Coach -->
+        <div class="gallery-card gal-item" data-filter="safari">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Group Tour Coach Desert Highway Rajasthan" onerror="this.src='assets/images/tempo-traveller.jpg'">
+          <div class="gallery-caption">
+            <h4>Highway Cruising Across Desert Roads</h4>
+            <p>Full air suspension pushback coaches ensuring zero fatigue on 500+ kilometer highway stretches.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Share CTA -->
+  <section class="section-padding section-bg-maroon text-center">
+    <div class="container" style="max-width: 800px;">
+      <h2>Traveled With Happy Journey Cabs Recently?</h2>
+      <p style="color: var(--sandstone-light); margin: 1rem 0 2rem;">Tag us on Instagram @HappyJourneyCabs or send us your holiday pictures on WhatsApp to get featured on our official royal gallery!</p>
+      <a href="booking.html" class="btn btn-gold" style="font-size: 1.1rem;"><i class="fas fa-camera"></i> Book Your Next Holiday Ride</a>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer & Floating Actions -->
+  <div id="footer-container"></div>
+  <div id="floating-actions-container"></div>
+  <div id="modal-container"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Gallery filter script
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+      const galItems = document.querySelectorAll('.gal-item');
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-outline');
+          });
+          btn.classList.remove('btn-outline');
+          btn.classList.add('btn-primary');
+          
+          const filter = btn.getAttribute('data-filter');
+          galItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-filter') === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

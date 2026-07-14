@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Cab Reservation & Booking Engine — Happy Journey Cabs | Instant Quotes</title>
+  <meta name="description"
+    content="Book your private AC cab online with Happy Journey Cabs. Choose from Swift Dzire, Toyota Innova Crysta, or Maharaja Tempo Travellers with verified chauffeurs across Rajasthan.">
+  <meta name="keywords"
+    content="Online Taxi Booking Rajasthan, Book Cab Jaipur, Innova Rental Booking, Tempo Traveller Reservation Jaipur, Instant Cab Quote">
+  <link rel="canonical" href="https://happyjourneycabs.com/booking.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Online Cab Reservation — Happy Journey Cabs">
+  <meta property="og:description" content="Reserve your royal journey across Rajasthan in just 3 simple steps.">
+  <meta property="og:image" content="https://happyjourneycabs.com/assets/images/hero-banner.jpg">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Dynamic Header -->
+  <div id="header-container" data-active="booking"></div>
+
+  <!-- Page Banner -->
+  <section class="hero-section"
+    style="min-height: 45vh; padding: 130px 0 60px; background: linear-gradient(135deg, rgba(22, 18, 16, 0.85), rgba(106, 27, 41, 0.8)), url('assets/images/hero-banner.jpg') center/cover no-repeat;">
+    <div class="container text-center">
+      <span class="royal-subtitle">✦ Fast, Safe & Transparent ✦</span>
+      <h1 style="color: var(--ivory);">Online Cab Reservation</h1>
+      <p style="color: var(--sandstone-light); max-width: 650px; margin: 0.8rem auto 0;">Select your preferred vehicle,
+        fill in your trip details, and receive an instant confirmation voucher from our Jaipur dispatch desk.</p>
+    </div>
+  </section>
+
+  <!-- Main Booking Wizard -->
+  <section class="section-padding section-bg-sand">
+    <div class="container" style="max-width: 850px;">
+      <div class="jharokha-card" style="border-top: 5px solid var(--gold); padding: 2.5rem;">
+
+        <div class="text-center" style="margin-bottom: 2.5rem;">
+          <span class="royal-subtitle">Step-By-Step Reservation</span>
+          <h2>Customize Your Royal Ride</h2>
+          <div class="royal-divider"><span></span><i class="fas fa-car"></i><span></span></div>
+        </div>
+
+        <form id="standaloneBookingForm" onsubmit="handleStandaloneBooking(event)"
+          style="display: flex; flex-direction: column; gap: 1.6rem;">
+
+          <!-- Step 1: Trip Type -->
+          <div>
+            <h4 style="font-size: 1.1rem; color: var(--royal-maroon); margin-bottom: 0.8rem;"><i
+                class="fas fa-route text-gold"></i> 1. Select Journey Type</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem;">
+              <label
+                style="border: 2px solid var(--border-color); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; display: flex; align-items: center; gap: 0.6rem; font-weight: 600; background: var(--ivory);">
+                <input type="radio" name="tripType" value="Outstation Round Trip" checked> Outstation Round Trip
+              </label>
+              <label
+                style="border: 2px solid var(--border-color); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; display: flex; align-items: center; gap: 0.6rem; font-weight: 600; background: var(--ivory);">
+                <input type="radio" name="tripType" value="One-Way Drop"> One-Way Drop
+              </label>
+              <label
+                style="border: 2px solid var(--border-color); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; display: flex; align-items: center; gap: 0.6rem; font-weight: 600; background: var(--ivory);">
+                <input type="radio" name="tripType" value="Local City Sightseeing"> Local Sightseeing
+              </label>
+              <label
+                style="border: 2px solid var(--border-color); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; display: flex; align-items: center; gap: 0.6rem; font-weight: 600; background: var(--ivory);">
+                <input type="radio" name="tripType" value="Airport Transfer"> Airport Transfer
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Vehicle Selection -->
+          <div>
+            <h4 style="font-size: 1.1rem; color: var(--royal-maroon); margin-bottom: 0.8rem;"><i
+                class="fas fa-car-side text-gold"></i> 2. Choose Your Vehicle</h4>
+            <select id="sbVehicle" required
+              style="width: 100%; padding: 0.85rem; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; background: var(--ivory);">
+              <option value="AC Executive Sedan (Swift Dzire @ ₹10/km)">AC Executive Sedan (Swift Dzire @ ₹10/km)</option>
+              <option value="AC Executive Sedan (Toyota Etios @ ₹11/km)">AC Executive Sedan (Toyota Etios @ ₹11/km)</option>
+              <option value="AC SUV Family Carrier (Maruti Ertiga @ ₹13/km)">AC SUV Family Carrier (Maruti Ertiga @ ₹13/km)</option>
+              <option value="Toyota Innova Crysta VIP (7 Seater @ ₹17/km)">Toyota Innova Crysta VIP (7 Seater @ ₹17/km)</option>
+              <option value="Maharaja Tempo Traveller (12 to 16 Seater @ ₹25/km)">Maharaja Tempo Traveller (12 to 16 Seater @ ₹25/km)</option>
+            </select>
+          </div>
+
+          <!-- Step 3: Route & Dates -->
+          <div>
+            <h4 style="font-size: 1.1rem; color: var(--royal-maroon); margin-bottom: 0.8rem;"><i
+                class="fas fa-map-marked-alt text-gold"></i> 3. Pickup & Route Details</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;"
+              class="grid-split-2">
+              <div>
+                <label
+                  style="font-size: 0.85rem; font-weight: 600; color: var(--dark-brown); display: block; margin-bottom: 0.3rem;">Pickup
+                  City / Location *</label>
+                <input type="text" id="sbPickup" required placeholder="Ex. Jaipur Airport or Hotel Address"
+                  style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body);">
+              </div>
+              <div>
+                <label
+                  style="font-size: 0.85rem; font-weight: 600; color: var(--dark-brown); display: block; margin-bottom: 0.3rem;">Destination
+                  / Tour Route *</label>
+                <input type="text" id="sbDrop" required placeholder="Ex. Udaipur -> Jodhpur -> Jaisalmer"
+                  style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body);">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;" class="grid-split-3">
+              <div>
+                <label
+                  style="font-size: 0.85rem; font-weight: 600; color: var(--dark-brown); display: block; margin-bottom: 0.3rem;">Start
+                  Date *</label>
+                <input type="date" id="sbStartDate" required
+                  style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body);">
+              </div>
+              <div>
+                <label
+                  style="font-size: 0.85rem; font-weight: 600; color: var(--dark-brown); display: block; margin-bottom: 0.3rem;">Return
+                  Date (Optional)</label>
+                <input type="date" id="sbEndDate"
+                  style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body);">
+              </div>
+              <div>
+                <label
+                  style="font-size: 0.85rem; font-weight: 600; color: var(--dark-brown); display: block; margin-bottom: 0.3rem;">Passengers</label>
+                <input type="number" id="sbPax" min="1" max="25" value="4"
+                  style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body);">
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Contact Info -->
+          <div>
+            <h4 style="font-size: 1.1rem; color: var(--royal-maroon); margin-bottom: 0.8rem;"><i
+                class="fas fa-user-check text-gold"></i> 4. Guest Contact Details</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;" class="grid-split-2">
+              <div>
+                <label
+                  style="font-size: 0.85rem; font-weight: 600; color: var(--dark-brown); display: block; margin-bottom: 0.3rem;">Full
+                  Name *</label>
+                <input type="text" id="sbName" required placeholder="Ex. Amit Verma"
+                  style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body);">
+              </div>
+              <div>
+                <label
+                  style="font-size: 0.85rem; font-weight: 600; color: var(--dark-brown); display: block; margin-bottom: 0.3rem;">Mobile
+                  / WhatsApp Number *</label>
+                <input type="tel" id="sbPhone" required placeholder="Ex. +91 9783201155"
+                  style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body);">
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div style="margin-top: 1rem;">
+            <button type="submit" class="btn btn-primary"
+              style="width: 100%; padding: 1.1rem; font-size: 1.15rem; font-weight: 700;">
+              <i class="fab fa-whatsapp"></i> Confirm & Submit Reservation to Dispatch Desk
+            </button>
+            <p class="text-center" style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.8rem;">
+              <i class="fas fa-lock text-gold"></i> No advance payment needed right now. Our manager will verify car
+              availability and send exact tariff details via WhatsApp within 5 minutes.
+            </p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 768px) {
+
+      .grid-split-2,
+      .grid-split-3 {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+
+  <!-- Dynamic Footer & Floating Actions -->
+  <div id="footer-container"></div>
+  <div id="floating-actions-container"></div>
+  <div id="modal-container"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleStandaloneBooking(e) {
+      e.preventDefault();
+      const tripType = document.querySelector('input[name="tripType"]:checked').value;
+      const vehicle = document.getElementById('sbVehicle').value;
+      const pickup = document.getElementById('sbPickup').value;
+      const drop = document.getElementById('sbDrop').value;
+      const start = document.getElementById('sbStartDate').value;
+      const end = document.getElementById('sbEndDate').value || 'Not specified';
+      const pax = document.getElementById('sbPax').value;
+      const name = document.getElementById('sbName').value;
+      const phone = document.getElementById('sbPhone').value;
+
+      const text = `*New Online Cab Booking Voucher*%0A%0A*Trip Type:* ${tripType}%0A*Vehicle:* ${vehicle}%0A*Pickup:* ${pickup}%0A*Drop/Route:* ${drop}%0A*Start Date:* ${start}%0A*Return Date:* ${end}%0A*Passengers:* ${pax}%0A%0A*Guest Name:* ${name}%0A*Guest Phone:* ${phone}`;
+      window.open(`https://wa.me/919783201155?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+
+</html>

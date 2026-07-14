@@ -1,0 +1,1214 @@
+/* ==========================================================================
+   HAPPY JOURNEY CABS — ROYAL RAJASTHAN LUXURY DESIGN SYSTEM
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --royal-maroon: #6A1B29;
+  --royal-maroon-dark: #4A121C;
+  --royal-maroon-light: #8C283B;
+  --gold: #D4AF37;
+  --gold-light: #F3E5AB;
+  --gold-dark: #B59021;
+  --sandstone: #D2B48C;
+  --sandstone-light: #E8DFD1;
+  --ivory: #FAF9F6;
+  --ivory-pure: #FFFFFF;
+  --dark-brown: #2C1E16;
+  --dark-charcoal: #161210;
+  --emerald: #0F52BA;
+  --emerald-green: #00A86B;
+  --text-dark: #221C1A;
+  --text-muted: #6B625D;
+  --border-gold: rgba(212, 175, 55, 0.4);
+  --border-subtle: rgba(44, 30, 22, 0.1);
+  --glass-bg: rgba(250, 249, 246, 0.88);
+  --glass-dark: rgba(22, 18, 16, 0.92);
+  
+  /* Typography */
+  --font-heading: 'Cinzel', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 4px 12px rgba(44, 30, 22, 0.06);
+  --shadow-md: 0 10px 30px rgba(44, 30, 22, 0.12);
+  --shadow-lg: 0 20px 50px rgba(106, 27, 41, 0.18);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.35);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 14.5px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--ivory);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  background-image: radial-gradient(var(--border-gold) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--dark-brown);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+}
+
+h1 { font-size: clamp(1.65rem, 3.2vw, 2.3rem); }
+h2 { font-size: clamp(1.4rem, 2.5vw, 1.85rem); }
+h3 { font-size: clamp(1.1rem, 1.8vw, 1.35rem); }
+h4 { font-size: 1.05rem; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul { list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   UTILITIES & DECORATIONS
+   ========================================================================== */
+.text-gold { color: var(--gold); }
+.text-maroon { color: var(--royal-maroon); }
+.text-center { text-align: center; }
+
+/* Rajasthani Royal Badge & Subtitle */
+.royal-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--royal-maroon);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(250, 249, 246, 0.8));
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gold);
+  margin-bottom: 1rem;
+}
+.royal-subtitle::before, .royal-subtitle::after {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+/* Decorative Divider */
+.royal-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.25rem 0 2.5rem;
+  gap: 1rem;
+}
+.royal-divider span {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.royal-divider span:last-child {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.royal-divider i {
+  color: var(--royal-maroon);
+  font-size: 1.25rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--royal-maroon), var(--royal-maroon-dark));
+  color: var(--ivory);
+  border: 1px solid var(--gold);
+  box-shadow: var(--shadow-md);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--royal-maroon-dark), #330B13);
+  color: var(--gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--dark-brown);
+  border: 1px solid #FFF;
+  box-shadow: var(--shadow-gold);
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--dark-charcoal);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--royal-maroon);
+  border: 2px solid var(--royal-maroon);
+}
+.btn-outline:hover {
+  background: var(--royal-maroon);
+  color: var(--ivory);
+  border-color: var(--gold);
+}
+
+/* Jharokha Arch Card Effect */
+.jharokha-card {
+  background: var(--ivory-pure);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-gold);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.jharokha-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--royal-maroon), var(--gold), var(--royal-maroon));
+}
+.jharokha-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold);
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-gold);
+  transition: var(--transition);
+}
+
+.header-top {
+  background: var(--royal-maroon-dark);
+  color: var(--gold-light);
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+.header-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-pills {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.contact-pills a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ivory);
+}
+.contact-pills a:hover { color: var(--gold); }
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--royal-maroon), var(--gold));
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ivory);
+  font-size: 1.5rem;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 10px rgba(106, 27, 41, 0.3);
+}
+.logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 10px rgba(106, 27, 41, 0.3);
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+.logo:hover .logo-img {
+  transform: scale(1.06);
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--royal-maroon);
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+.logo-tagline {
+  font-size: 0.72rem;
+  color: var(--dark-brown);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+.nav-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--dark-brown);
+  position: relative;
+  padding: 0.5rem 0;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--royal-maroon);
+  transition: var(--transition);
+}
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--royal-maroon);
+}
+
+/* Nav Dropdown */
+.nav-item-dropdown:hover .nav-dropdown-menu {
+  display: block !important;
+}
+.nav-dropdown-menu a:hover {
+  background: var(--sandstone-light);
+  color: var(--royal-maroon) !important;
+  padding-left: 1.5rem !important;
+  transition: all 0.25s ease;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--royal-maroon);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO BANNER & QUICK BOOKING FORM
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 88vh;
+  padding: 140px 0 80px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(22, 18, 16, 0.75), rgba(106, 27, 41, 0.7)), url('/assets/images/hero-banner.jpg') center/cover no-repeat;
+  color: var(--ivory);
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, var(--ivory), transparent);
+  z-index: 2;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-content h1 {
+  color: var(--ivory);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.hero-content p {
+  font-size: 1.15rem;
+  color: var(--sandstone-light);
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.hero-features {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+}
+.hero-feature-item i {
+  width: 36px;
+  height: 36px;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+/* Quick Booking Box */
+.quick-booking-box {
+  background: var(--ivory-pure);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--gold);
+  color: var(--text-dark);
+  position: relative;
+}
+.quick-booking-box::before {
+  content: '✦ ROYAL RAJASTHAN BOOKING ✦';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--royal-maroon);
+  color: var(--gold-light);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gold);
+  white-space: nowrap;
+}
+
+.booking-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 0.75rem;
+  overflow-x: auto;
+}
+.booking-tab {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.booking-tab.active, .booking-tab:hover {
+  background: var(--royal-maroon);
+  color: var(--ivory);
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  margin-bottom: 0.4rem;
+}
+.form-input, .form-select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: #FFF;
+  transition: var(--transition);
+}
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--royal-maroon);
+  box-shadow: 0 0 0 3px rgba(106, 27, 41, 0.1);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   SECTION COMMON STYLES
+   ========================================================================== */
+.section-padding {
+  padding: 90px 0;
+  position: relative;
+}
+.section-bg-sand { background-color: var(--sandstone-light); }
+.section-bg-maroon {
+  background: linear-gradient(135deg, var(--royal-maroon-dark), var(--dark-charcoal));
+  color: var(--ivory);
+}
+.section-bg-maroon h2 { color: var(--ivory); }
+
+/* Grid Layouts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+/* Fleet Card */
+.fleet-card {
+  background: var(--ivory-pure);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.fleet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold);
+}
+.fleet-img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #EAE5DE, #D6CEBE);
+}
+.fleet-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.fleet-card:hover .fleet-img-wrap img {
+  transform: scale(1.08);
+}
+.fleet-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--royal-maroon);
+  color: var(--gold-light);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gold);
+}
+.fleet-content {
+  padding: 1.6rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.fleet-specs {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0.8rem 0;
+  border-top: 1px dashed var(--border-subtle);
+  border-bottom: 1px dashed var(--border-subtle);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.fleet-specs span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.fleet-features {
+  margin-bottom: 1.5rem;
+}
+.fleet-features li {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.fleet-features li::before {
+  content: '✓';
+  color: var(--emerald-green);
+  font-weight: bold;
+}
+.fleet-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.fleet-price {
+  font-family: var(--font-heading);
+  color: var(--royal-maroon);
+}
+.fleet-price-amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.fleet-price-unit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Tour & Destination Cards */
+.tour-card {
+  background: var(--ivory-pure);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.tour-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.tour-img {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+.tour-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.tour-card:hover .tour-img img { transform: scale(1.08); }
+.tour-duration {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(22, 18, 16, 0.85);
+  color: var(--gold-light);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--gold);
+}
+
+/* Pricing Table / Cards */
+.pricing-card {
+  background: var(--ivory-pure);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+.pricing-card.featured {
+  border: 2px solid var(--gold);
+  transform: scale(1.04);
+  box-shadow: var(--shadow-gold);
+}
+.pricing-card.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--dark-brown);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 1.2rem;
+  border-radius: var(--radius-full);
+}
+.pricing-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.pricing-amount {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--royal-maroon);
+  margin: 1.2rem 0;
+}
+.pricing-list {
+  text-align: left;
+  margin: 1.8rem 0;
+}
+.pricing-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border-subtle);
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: #FFF;
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.testimonial-quote {
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--royal-maroon);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* FAQ Accordion */
+.faq-item {
+  background: var(--ivory-pure);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+  text-align: left;
+  cursor: pointer;
+}
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.faq-item.active .faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  max-height: 500px;
+}
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+  color: var(--royal-maroon);
+}
+
+/* ==========================================================================
+   FOOTER & FLOATING ACTIONS
+   ========================================================================== */
+.site-footer {
+  background: var(--dark-charcoal);
+  color: var(--sandstone-light);
+  padding: 80px 0 30px;
+  border-top: 4px solid var(--gold);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-title {
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+}
+.footer-links li { margin-bottom: 0.75rem; }
+.footer-links a:hover {
+  color: var(--gold);
+  padding-left: 5px;
+}
+.footer-contact li {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+}
+.footer-contact i {
+  color: var(--gold);
+  margin-top: 4px;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  font-size: 0.85rem;
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.floating-whatsapp:hover {
+  transform: scale(1.1) rotate(8deg);
+  background-color: #1EBE5D;
+}
+
+/* Sticky Mobile Call Bar */
+.sticky-mobile-call {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--royal-maroon-dark);
+  z-index: 999;
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+}
+.sticky-mobile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.sticky-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.sticky-btn.call-btn { background: var(--royal-maroon); }
+.sticky-btn.wa-btn { background: #25D366; }
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(22, 18, 16, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+  background: var(--ivory-pure);
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 600px;
+  padding: 2.5rem;
+  border: 2px solid var(--gold);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  background: var(--emerald-green);
+  color: #FFF;
+  padding: 1rem 1.8rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  z-index: 3000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transform: translateX(150%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.toast-notice.show { transform: translateX(0); }
+
+/* ==========================================================================
+   UNIVERSAL DISPLAY & SCREEN SIZE ADAPTABILITY ENGINE (4K to 320px)
+   ========================================================================== */
+
+/* 1. Ultra-Wide & 4K High-Resolution Displays (min-width: 1600px) */
+@media (min-width: 1600px) {
+  body {
+    font-size: 17px;
+  }
+  .container {
+    max-width: 1440px;
+  }
+}
+
+/* 2. Tablet Displays & Medium Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 2.5rem !important; }
+  
+  /* Ensure wide card itineraries fit smoothly on tablet screens */
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* 3. Mobile Phones & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Navigation & Hamburger Menu Drawer */
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 85%;
+    max-width: 340px;
+    height: calc(100vh - 80px);
+    background: var(--glass-dark);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 1.8rem 1.5rem;
+    align-items: flex-start;
+    overflow-y: auto;
+    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 5px 0 25px rgba(0,0,0,0.6);
+    z-index: 1500;
+  }
+  .nav-menu.open { left: 0; }
+  .nav-link {
+    color: var(--ivory);
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  }
+  .hamburger { display: block; }
+  .header-top { display: none; }
+
+  /* Mobile Dropdown Menu Drawer Integration */
+  .nav-item-dropdown {
+    position: static !important;
+    width: 100%;
+  }
+  .nav-dropdown-menu {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-left: 2px solid var(--gold) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 0.2rem 0 0.5rem 0.8rem !important;
+    margin: 0.4rem 0 !important;
+  }
+  .nav-dropdown-menu a {
+    color: var(--ivory) !important;
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.92rem !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  }
+  .nav-dropdown-menu a:hover {
+    background: rgba(212, 175, 55, 0.2) !important;
+    color: var(--gold-light) !important;
+  }
+
+  /* Universal Grid Collapse for Mobile */
+  .grid-4, .grid-3, .grid-2, .grid-split-3, .grid-split-2, .contact-split {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Override all inline multi-column styles across packages, bookings, and regional hubs */
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns: 1.15fr 0.85fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Responsive Flex Wrapping */
+  .hero-features, .stats-bar, [style*="display: flex"][style*="justify-content: space-between"] {
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+  }
+
+  /* Responsive Typography & Hero Adjustments */
+  .hero-section {
+    padding: 110px 0 50px !important;
+    min-height: auto !important;
+  }
+  .hero-content h1 {
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
+  }
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+  .pricing-card.featured { transform: none; }
+
+  /* Responsive Tables with Horizontal Touch Scrolling */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+  }
+  table {
+    width: 100%;
+    min-width: 520px;
+  }
+
+  /* Prevent iOS Safari Automatic Zoom on Inputs */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  /* Floating Action Buttons & Spacing */
+  body { padding-bottom: 65px !important; }
+  .sticky-mobile-call {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2999;
+  }
+  .floating-whatsapp {
+    bottom: 75px !important;
+    right: 15px !important;
+  }
+  .toast-notice {
+    top: auto;
+    bottom: 85px;
+    right: 15px;
+    left: 15px;
+    width: auto;
+    justify-content: center;
+  }
+}
+
+/* 4. Small & Narrow Mobile Devices (max-width: 480px / 360px iPhone SE & Galaxy Fold) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem !important;
+  }
+  .hero-section {
+    padding: 100px 0 40px !important;
+  }
+  .hero-content h1 {
+    font-size: 1.65rem !important;
+  }
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+  .jharokha-card, .quick-booking-box, .modal-box {
+    padding: 1.2rem !important;
+  }
+  .btn {
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+  .modal-box {
+    width: 95% !important;
+    padding: 1.5rem 1.2rem !important;
+    max-height: 85vh !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
