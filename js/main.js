@@ -40,15 +40,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. Hamburger Mobile Menu Toggle
+  // 2. Hamburger Mobile & Tablet Menu Toggle
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');
   if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('open');
       const icon = hamburgerBtn.querySelector('i');
       if (icon) {
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
+      }
+    });
+
+    // Close menu when clicking any nav link inside
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const icon = hamburgerBtn.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
+      });
+    });
+
+    // Close menu when clicking outside on mobile/tablet screen
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        navMenu.classList.remove('open');
+        const icon = hamburgerBtn.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
       }
     });
   }

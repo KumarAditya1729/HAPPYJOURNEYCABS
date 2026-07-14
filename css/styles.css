@@ -1021,9 +1021,8 @@ ul { list-style: none; }
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .toast-notice.show { transform: translateX(0); }
-
 /* ==========================================================================
-   UNIVERSAL DISPLAY & SCREEN SIZE ADAPTABILITY ENGINE (4K to 320px)
+   UNIVERSAL 5-TIER ZERO-OVERFLOW & EXACT-FIT ENGINE (4K to 320px)
    ========================================================================== */
 
 /* 1. Ultra-Wide & 4K High-Resolution Displays (min-width: 1600px) */
@@ -1032,18 +1031,110 @@ ul { list-style: none; }
     font-size: 17px;
   }
   .container {
-    max-width: 1440px;
+    max-width: 1440px !important;
+    margin: 0 auto !important;
   }
 }
 
-/* 2. Tablet Displays & Medium Laptops (max-width: 1024px) */
-@media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
-  .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
-  .hero-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-  .footer-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 2.5rem !important; }
-  
-  /* Ensure wide card itineraries fit smoothly on tablet screens */
+/* 2. PC & Medium Laptops (min-width: 1181px and max-width: 1400px) */
+@media (min-width: 1181px) and (max-width: 1400px) {
+  .nav-menu {
+    gap: 0.85rem !important;
+  }
+  .nav-link {
+    font-size: 0.88rem !important;
+  }
+  .logo-img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .logo-title {
+    font-size: 1.22rem !important;
+  }
+}
+
+/* 3. iPad Pro, Tablets & Small Laptops (max-width: 1180px) */
+@media (max-width: 1180px) {
+  /* Enforce Hamburger Drawer on all iPads & Tablets so 11 nav items never overflow or wrap */
+  .hamburger {
+    display: block !important;
+    font-size: 1.6rem !important;
+    padding: 0.4rem !important;
+    margin-left: auto !important;
+  }
+  .header-top { display: none !important; }
+
+  .nav-container {
+    height: 74px !important;
+    padding: 0 1.25rem !important;
+  }
+  .logo-img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .logo-title {
+    font-size: 1.22rem !important;
+    letter-spacing: 0px !important;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 74px;
+    left: -100%;
+    width: 85%;
+    max-width: 360px;
+    height: calc(100vh - 74px);
+    background: var(--glass-dark);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 1.8rem 1.5rem;
+    align-items: flex-start;
+    overflow-y: auto;
+    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 5px 0 25px rgba(0,0,0,0.6);
+    z-index: 1500;
+  }
+  .nav-menu.open { left: 0 !important; }
+  .nav-link {
+    color: var(--ivory) !important;
+    font-size: 1.1rem !important;
+    width: 100% !important;
+    padding: 0.85rem 0 !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  }
+
+  /* Mobile Dropdown Menu Drawer Integration */
+  .nav-item-dropdown {
+    position: static !important;
+    width: 100% !important;
+  }
+  .nav-dropdown-menu {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-left: 2px solid var(--gold) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 0.2rem 0 0.5rem 0.8rem !important;
+    margin: 0.4rem 0 !important;
+  }
+  .nav-dropdown-menu a {
+    color: var(--ivory) !important;
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.92rem !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  }
+
+  /* Grids collapse gracefully on Tablet / iPad */
+  .grid-4, .grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  .hero-grid, .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
   [style*="grid-template-columns: 1fr 1.6fr"],
   [style*="grid-template-columns: 1fr 1.5fr"] {
     grid-template-columns: 1fr !important;
@@ -1051,7 +1142,7 @@ ul { list-style: none; }
   }
 }
 
-/* 3. Mobile Phones & Small Tablets (max-width: 768px) */
+/* 4. Mobile Phones & Tablets Portrait (max-width: 768px) */
 @media (max-width: 768px) {
   /* Enforce Document Root Bounds */
   html, body {
@@ -1098,66 +1189,9 @@ ul { list-style: none; }
     font-size: 0.65rem !important;
     letter-spacing: 1px !important;
   }
-  .hamburger {
-    display: block !important;
-    font-size: 1.5rem !important;
-    padding: 0.4rem !important;
-    margin-left: auto !important;
-  }
-  .header-top { display: none !important; }
-
-  /* Navigation & Hamburger Menu Drawer */
   .nav-menu {
-    position: fixed;
-    top: 68px;
-    left: -100%;
-    width: 85%;
-    max-width: 340px;
-    height: calc(100vh - 68px);
-    background: var(--glass-dark);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 1.8rem 1.5rem;
-    align-items: flex-start;
-    overflow-y: auto;
-    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 5px 0 25px rgba(0,0,0,0.6);
-    z-index: 1500;
-  }
-  .nav-menu.open { left: 0; }
-  .nav-link {
-    color: var(--ivory);
-    font-size: 1.1rem;
-    width: 100%;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  }
-
-  /* Mobile Dropdown Menu Drawer Integration */
-  .nav-item-dropdown {
-    position: static !important;
-    width: 100%;
-  }
-  .nav-dropdown-menu {
-    position: static !important;
-    display: block !important;
-    width: 100% !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-left: 2px solid var(--gold) !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    padding: 0.2rem 0 0.5rem 0.8rem !important;
-    margin: 0.4rem 0 !important;
-  }
-  .nav-dropdown-menu a {
-    color: var(--ivory) !important;
-    padding: 0.5rem 0.8rem !important;
-    font-size: 0.92rem !important;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
-  }
-  .nav-dropdown-menu a:hover {
-    background: rgba(212, 175, 55, 0.2) !important;
-    color: var(--gold-light) !important;
+    top: 68px !important;
+    height: calc(100vh - 68px) !important;
   }
 
   /* Universal Grid Collapse for Mobile */
@@ -1219,7 +1253,7 @@ ul { list-style: none; }
   }
 
   /* Responsive Tables with Horizontal Touch Scrolling */
-  .table-responsive {
+  .table-responsive, [style*="overflow-x: auto"] {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: auto !important;
@@ -1261,7 +1295,7 @@ ul { list-style: none; }
   }
 }
 
-/* 4. Small & Narrow Mobile Devices (max-width: 480px / 360px iPhone SE & Galaxy Fold) */
+/* 5. Small & Narrow Mobile Devices (max-width: 480px / 360px iPhone SE & Galaxy Fold) */
 @media (max-width: 480px) {
   .container {
     padding: 0 0.75rem !important;
@@ -1302,4 +1336,3 @@ ul { list-style: none; }
     gap: 2rem !important;
   }
 }
-
