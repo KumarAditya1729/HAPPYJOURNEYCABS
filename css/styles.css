@@ -1805,3 +1805,609 @@ th {
     padding: 0.75rem 0.4rem !important;
   }
 }
+
+/* ==========================================================================
+   CURATED ROAD TRIPS — LUXURY AIRBNB + MAKEMYTRIP + APPLE DESIGN SYSTEM
+   ========================================================================== */
+:root {
+  --saffron: #FF6B00;
+  --saffron-hover: #E56000;
+  --saffron-light: rgba(255, 107, 0, 0.12);
+  --saffron-glow: rgba(255, 107, 0, 0.28);
+  --trip-radius: 20px;
+  --trip-shadow: 0 14px 38px rgba(22, 18, 16, 0.08);
+  --trip-shadow-hover: 0 24px 50px rgba(255, 107, 0, 0.18);
+}
+
+.roadtrips-section {
+  background: var(--ivory-pure);
+  padding: clamp(60px, 8vw, 100px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.roadtrips-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.2rem;
+  padding: 0 1rem;
+}
+
+.roadtrips-header .saffron-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--saffron-light);
+  color: var(--saffron);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.12);
+}
+
+.roadtrips-header h1,
+.roadtrips-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  color: var(--dark-brown);
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.5px;
+}
+
+.roadtrips-header p {
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* Search Bar */
+.roadtrips-search-wrap {
+  max-width: 640px;
+  margin: 0 auto 2.2rem;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.roadtrips-search-box {
+  display: flex;
+  align-items: center;
+  background: var(--ivory-pure);
+  border: 2px solid rgba(44, 30, 22, 0.12);
+  border-radius: var(--radius-full);
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.roadtrips-search-box:focus-within {
+  border-color: var(--saffron);
+  box-shadow: 0 10px 35px var(--saffron-glow);
+}
+
+.roadtrips-search-box i {
+  color: var(--saffron);
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+}
+
+.roadtrips-search-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--dark-brown);
+  font-family: var(--font-body);
+  outline: none;
+}
+
+.roadtrips-search-input::placeholder {
+  color: #948B86;
+}
+
+/* Filters Bar */
+.roadtrips-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+  padding: 0 1rem;
+}
+
+.filter-pill {
+  background: #F4F1EA;
+  color: var(--dark-brown);
+  border: 1.5px solid transparent;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.filter-pill:hover {
+  background: #EAE5DB;
+  transform: translateY(-2px);
+}
+
+.filter-pill.active {
+  background: var(--saffron);
+  color: var(--ivory-pure);
+  border-color: var(--saffron);
+  box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+}
+
+.filter-pill .pill-count {
+  background: rgba(0, 0, 0, 0.12);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+}
+
+.filter-pill.active .pill-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Grid Layout */
+.roadtrips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2.2rem;
+  padding: 0.5rem 0 2rem;
+}
+
+@media (max-width: 640px) {
+  .roadtrips-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+}
+
+/* Trip Card - Luxury 20px Rounded */
+.trip-card {
+  background: var(--ivory-pure);
+  border-radius: var(--trip-radius);
+  border: 1px solid rgba(44, 30, 22, 0.08);
+  box-shadow: var(--trip-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  height: 100%;
+}
+
+.trip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--trip-shadow-hover);
+  border-color: rgba(255, 107, 0, 0.35);
+}
+
+/* Image Container & Overlays */
+.trip-image-wrap {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.trip-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trip-card:hover .trip-image {
+  transform: scale(1.07);
+}
+
+.trip-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.1) 45%, rgba(15, 23, 42, 0.88) 100%);
+  pointer-events: none;
+}
+
+/* Badges on Image */
+.trip-badge-category {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--saffron);
+  color: #FFF;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.4);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.trip-badge-distance {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FFF;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.trip-actions-floating {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.btn-icon-float {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--dark-brown);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-icon-float:hover {
+  background: #FFF;
+  transform: scale(1.1);
+  color: var(--saffron);
+}
+
+.btn-icon-float.fav-active {
+  color: #E11D48;
+}
+
+/* Card Content Body */
+.trip-body {
+  padding: 1.6rem 1.6rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.trip-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.trip-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.trip-meta-item i {
+  color: var(--saffron);
+  font-size: 0.95rem;
+}
+
+.trip-title {
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+
+.trip-card:hover .trip-title {
+  color: var(--saffron);
+}
+
+/* Route Timeline Visual */
+.trip-route-box {
+  background: #FDFBF7;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.trip-route-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  color: var(--saffron);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trip-route-path {
+  font-size: 0.86rem;
+  color: var(--dark-brown);
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.6;
+}
+
+.trip-route-path span.arrow {
+  color: var(--saffron);
+  font-weight: 800;
+}
+
+/* Highlights Bullets */
+.trip-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.4rem;
+}
+
+.trip-highlight-tag {
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--dark-brown);
+  border: 1px solid rgba(255, 107, 0, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.trip-highlight-tag i {
+  color: var(--saffron);
+  font-size: 0.7rem;
+}
+
+/* Price & Button Footer inside Card */
+.trip-footer {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(44, 30, 22, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.trip-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-price-label {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.trip-price-amount {
+  font-size: 1.38rem;
+  font-weight: 800;
+  color: var(--dark-brown);
+}
+
+.trip-price-unit {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.trip-cta-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.btn-trip-route {
+  background: #F4F1EA;
+  color: var(--dark-brown);
+  border: 1px solid rgba(44, 30, 22, 0.12);
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-trip-route:hover {
+  background: var(--dark-brown);
+  color: var(--ivory-pure);
+}
+
+.btn-trip-book {
+  background: var(--saffron);
+  color: #FFF;
+  border: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-trip-book:hover {
+  background: var(--saffron-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.45);
+}
+
+.btn-trip-details {
+  background: transparent;
+  color: var(--dark-brown);
+  border: 1.5px solid var(--dark-brown);
+  padding: 0.62rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-trip-details:hover {
+  background: var(--dark-brown);
+  color: var(--ivory-pure);
+}
+
+/* Modals (Google Map & Booking) */
+.roadtrips-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.roadtrips-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.roadtrips-modal-content {
+  background: var(--ivory-pure);
+  border-radius: var(--trip-radius);
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  padding: 2.2rem;
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.roadtrips-modal-backdrop.active .roadtrips-modal-content {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #F4F1EA;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--dark-brown);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  background: #E11D48;
+  color: #FFF;
+  transform: rotate(90deg);
+}
+
+.modal-header-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dark-brown);
+  margin-bottom: 0.4rem;
+}
+
+.modal-header-sub {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.6rem;
+}
+
+/* Toast Notification */
+.roadtrips-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--dark-brown);
+  color: var(--gold-light);
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  border: 1px solid var(--gold);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.roadtrips-toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+

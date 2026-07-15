@@ -38,6 +38,7 @@ function renderHeader(activePage = 'index') {
         <div class="nav-item-dropdown" id="navDropdownContainer">
           <a href="packages.html" class="nav-link ${['packages','rajasthan','jaipur-sightseeing','pilgrimage','uttarakhand','himachal','up','mp','delhi'].includes(activePage) ? 'active' : ''}" id="tourPackagesDropdownToggle" aria-haspopup="true" aria-expanded="false" style="display: inline-flex; align-items: center; gap: 0.3rem;">Tour Packages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
           <div class="nav-dropdown-menu" id="tourPackagesDropdownMenu" aria-label="Tour Packages Submenu">
+            <a href="index.html#road-trips" style="color: #FF6B00; font-weight: 700;">✦ Curated Road Trips</a>
             <a href="packages.html">All Tour Packages Overview</a>
             <a href="rajasthan-packages.html">✦ Rajasthan Tour Packages</a>
             <a href="jaipur-sightseeing.html">✦ Jaipur Sightseeing Packages</a>
@@ -108,6 +109,7 @@ function renderFooter() {
         <div>
           <h4 class="footer-title">Tour Packages & Hubs</h4>
           <ul class="footer-links">
+            <li><a href="index.html#road-trips" style="color: #FF6B00; font-weight: 700;">Curated Road Trips from Jaipur</a></li>
             <li><a href="rajasthan-packages.html">Rajasthan Tour Packages</a></li>
             <li><a href="jaipur-sightseeing.html">Jaipur Sightseeing Tours</a></li>
             <li><a href="pilgrimage-packages.html">Temple & Pilgrimage Tours</a></li>

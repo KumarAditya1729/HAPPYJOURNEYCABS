@@ -310,7 +310,7 @@
         <div class="tour-card">
           <div class="tour-img">
             <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=700&q=80" alt="Local Sightseeing Taxi Service in Jaipur" onerror="this.src='assets/images/hero-banner.jpg'">
-            <span class="tour-duration"><i class="fas fa-map-marked-alt"></i> Full Day / Half Day</span>
+            <span class="tour-duration"><i class="fas fa-map-marked-alt"></i> Full Day / Extended Day</span>
           </div>
           <div style="padding: 1.8rem;">
             <h3>Local City Sightseeing</h3>
@@ -644,6 +644,519 @@
   </section>
 
   <!-- ==========================================================================
+       6.5 CURATED ROAD TRIPS FROM JAIPUR (HOME SECTION)
+       ========================================================================== -->
+  <section class="roadtrips-section" id="road-trips">
+    <div class="container">
+      <div class="roadtrips-header">
+        <div class="saffron-badge">
+          <i class="fas fa-compass"></i> Saffron Luxury Experience
+        </div>
+        <h2>Explore Rajasthan by Road</h2>
+        <p>Discover carefully curated road trips from Jaipur with verified routes, iconic destinations, estimated travel time, and instant cab booking.</p>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="roadtrips-search-wrap">
+        <div class="roadtrips-search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="roadtripsSearchInput" class="roadtrips-search-input" placeholder="Search road trips (e.g., Khatu Shyam, Pushkar, Tiger Safari, Fort)..." aria-label="Search road trips">
+          <button id="clearSearchBtn" style="background:none; border:none; color:#948B86; font-size:1.1rem; cursor:pointer; display:none;" aria-label="Clear Search"><i class="fas fa-times-circle"></i></button>
+        </div>
+      </div>
+
+      <!-- Filters Bar -->
+      <div class="roadtrips-filters" id="roadtripsFilters" role="tablist">
+        <button class="filter-pill active" data-filter="all">
+          <span>All Trips</span> <span class="pill-count">8</span>
+        </button>
+        <button class="filter-pill" data-filter="temple">
+          <i class="fas fa-gopuram text-maroon"></i> <span>Temple Tours</span> <span class="pill-count">3</span>
+        </button>
+        <button class="filter-pill" data-filter="heritage">
+          <i class="fas fa-monument"></i> <span>Heritage</span> <span class="pill-count">4</span>
+        </button>
+        <button class="filter-pill" data-filter="wildlife">
+          <i class="fas fa-paw"></i> <span>Wildlife</span> <span class="pill-count">2</span>
+        </button>
+        <button class="filter-pill" data-filter="weekend">
+          <i class="fas fa-calendar-alt"></i> <span>Weekend</span> <span class="pill-count">4</span>
+        </button>
+        <button class="filter-pill" data-filter="family">
+          <i class="fas fa-users"></i> <span>Family</span> <span class="pill-count">6</span>
+        </button>
+        <button class="filter-pill" data-filter="adventure">
+          <i class="fas fa-mountain"></i> <span>Adventure</span> <span class="pill-count">3</span>
+        </button>
+        <button class="filter-pill" data-filter="luxury">
+          <i class="fas fa-crown"></i> <span>Luxury</span> <span class="pill-count">5</span>
+        </button>
+        <button class="filter-pill" data-filter="budget">
+          <i class="fas fa-wallet"></i> <span>Budget</span> <span class="pill-count">4</span>
+        </button>
+      </div>
+
+      <!-- Trips Grid -->
+      <div class="roadtrips-grid" id="roadtripsGrid">
+
+        <!-- ================= TRIP 1: Khatu Shyam ================= -->
+        <div class="trip-card" data-category="temple family luxury weekend" data-stops="3" data-duration="14">
+          <div class="trip-image-wrap">
+            <img src="assets/images/khatu-salasar-jeenmata-merger.png" alt="Khatu Shyam, Jeen Mata & Salasar Balaji Temple Darshan Merger Collage" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-om"></i> Temple Tour</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 430 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Khatu Shyam • Jeen Mata • Salasar Balaji" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Khatu Shyam • Jeen Mata • Salasar Balaji" data-url="https://happyjourneycabs.com/jaipur-khatu-salasar-trip.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> 14 Hours</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 3 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> Verified Route</span>
+            </div>
+            <h3 class="trip-title">Khatu Shyam • Jeen Mata • Salasar Balaji</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Khatu Shyam • Jeen Mata • Salasar Balaji" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d456000!2d75.1!3d27.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x396ce1c411c5e933%3A0xe543e5a593e7cf8d!2sSalasar%20Balaji%20Temple%2C%20Salasar%2C%20Rajasthan!3m2!1d27.7247!2d74.7262!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Jeen Mata <span class="arrow">↓</span> Khatu Shyam Ji <span class="arrow">↓</span> Salasar Balaji <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-star"></i> Khatu Shyam Ji</span>
+              <span class="trip-highlight-tag"><i class="fas fa-star"></i> Jeen Mata Temple</span>
+              <span class="trip-highlight-tag"><i class="fas fa-star"></i> Salasar Balaji</span>
+              <span class="trip-highlight-tag"><i class="fas fa-utensils"></i> Famous Dal Baati & Sweets</span>
+            </div>
+
+            <!-- Explicit Tariff Breakdown Table -->
+            <div style="background: rgba(255,107,0,0.06); border: 1.5px solid rgba(255,107,0,0.22); border-radius: 14px; padding: 0.9rem; margin: 1rem 0 0.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; font-size: 0.82rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 0.45rem 0.65rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.04);">
+                <span style="font-weight: 700; color: #33261D;"><i class="fas fa-car text-maroon"></i> Sedan</span>
+                <span style="font-weight: 800; color: var(--saffron-dark);">₹4,599</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 0.45rem 0.65rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.04);">
+                <span style="font-weight: 700; color: #33261D;"><i class="fas fa-car-side text-maroon"></i> Ertiga SUV</span>
+                <span style="font-weight: 800; color: var(--saffron-dark);">₹5,999</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 0.45rem 0.65rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.04);">
+                <span style="font-weight: 700; color: #33261D;"><i class="fas fa-shuttle-van text-maroon"></i> Innova Crysta</span>
+                <span style="font-weight: 800; color: var(--saffron-dark);">₹7,499</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 0.45rem 0.65rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.04);">
+                <span style="font-weight: 700; color: #33261D;"><i class="fas fa-bus text-maroon"></i> Tempo 17-Sit</span>
+                <span style="font-weight: 800; color: var(--saffron-dark);">₹11,999</span>
+              </div>
+            </div>
+
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹4,599</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-khatu-salasar-trip.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Khatu Shyam • Jeen Mata • Salasar Balaji" data-price="₹4,599 (Sedan) / ₹5,999 (Ertiga) / ₹7,499 (Innova) / ₹11,999 (Tempo 17-Sit)" data-distance="430 km" data-duration="14 Hours">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TRIP 2: Ajmer Pushkar ================= -->
+        <div class="trip-card" data-category="temple heritage family weekend budget" data-stops="4" data-duration="11">
+          <div class="trip-image-wrap">
+            <img src="assets/images/tour-ajmer-pushkar.jpg" alt="Ajmer Pushkar Same Day Road Trip from Jaipur" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-landmark"></i> Temple & Heritage</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 300 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Ajmer • Pushkar" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Ajmer • Pushkar Road Trip" data-url="https://happyjourneycabs.com/jaipur-ajmer-pushkar-trip.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> 11 Hours</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 4 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> Express Highway</span>
+            </div>
+            <h3 class="trip-title">Ajmer • Pushkar</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Ajmer • Pushkar" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3565.0!2d74.6!3d26.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x396be6d8fcb7cd01%3A0xc6c29a4a7541f92e!2sPushkar%20Lake%2C%20Pushkar%2C%20Rajasthan!3m2!1d26.4897!2d74.5511!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Ajmer Sharif <span class="arrow">↓</span> Ana Sagar <span class="arrow">↓</span> Pushkar Lake <span class="arrow">↓</span> Brahma Temple <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-star"></i> Ajmer Sharif Dargah</span>
+              <span class="trip-highlight-tag"><i class="fas fa-star"></i> Pushkar Holy Lake</span>
+              <span class="trip-highlight-tag"><i class="fas fa-star"></i> Rare Brahma Temple</span>
+              <span class="trip-highlight-tag"><i class="fas fa-water"></i> Ana Sagar Lake Promenade</span>
+            </div>
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹3,199</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-ajmer-pushkar-trip.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Ajmer • Pushkar" data-price="₹3,199" data-distance="300 km" data-duration="11 Hours">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TRIP 3: Mehandipur Balaji + Chand Baori ================= -->
+        <div class="trip-card" data-category="temple heritage family budget" data-stops="3" data-duration="8">
+          <div class="trip-image-wrap">
+            <img src="assets/images/tour-mehandipur.jpg" alt="Mehandipur Balaji and Chand Baori Stepwell Tour" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-landmark"></i> Temple & Heritage</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 240 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Mehandipur Balaji + Chand Baori + Harshat Mata" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Mehandipur Balaji + Chand Baori Tour" data-url="https://happyjourneycabs.com/jaipur-mehandipur-balaji-tour.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> 8 Hours</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 3 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> NH-21 Expressway</span>
+            </div>
+            <h3 class="trip-title">Mehandipur Balaji + Chand Baori + Harshat Mata</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Mehandipur Balaji + Chand Baori + Harshat Mata" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d200000!2d76.5!3d26.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x3971e1948332152d%3A0x2984920616113b91!2sChand%20Baori%2C%20Abhaneri%2C%20Rajasthan!3m2!1d27.0073!2d76.6067!5e0!3m2!1sen!2sin!4v1700000000002!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Mehandipur Balaji <span class="arrow">↓</span> Chand Baori <span class="arrow">↓</span> Harshat Mata <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-star"></i> Mehandipur Balaji Temple</span>
+              <span class="trip-highlight-tag"><i class="fas fa-camera"></i> 3,500-Step Chand Baori</span>
+              <span class="trip-highlight-tag"><i class="fas fa-history"></i> Harshat Mata Ruins</span>
+              <span class="trip-highlight-tag"><i class="fas fa-car"></i> Smooth Agra Highway</span>
+            </div>
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹2,699</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-mehandipur-balaji-tour.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Mehandipur Balaji + Chand Baori + Harshat Mata" data-price="₹2,699" data-distance="240 km" data-duration="8 Hours">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TRIP 4: Bhangarh Ajabgarh Abhaneri ================= -->
+        <div class="trip-card" data-category="heritage adventure weekend budget" data-stops="3" data-duration="9">
+          <div class="trip-image-wrap">
+            <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80" alt="Bhangarh Haunted Fort and Abhaneri Stepwell Road Trip" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-monument"></i> Heritage</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 250 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Bhangarh • Ajabgarh • Abhaneri" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Bhangarh Fort & Abhaneri Heritage Tour" data-url="https://happyjourneycabs.com/jaipur-bhangarh-tour.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> 9 Hours</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 3 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> Safe Day Excursion</span>
+            </div>
+            <h3 class="trip-title">Bhangarh • Ajabgarh • Abhaneri</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Bhangarh • Ajabgarh • Abhaneri" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d200000!2d76.3!3d27.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x3971fb2d600b3e6d%3A0x280e5b71db4ff11c!2sBhangarh%20Fort%2C%20Bhangarh%2C%20Rajasthan!3m2!1d27.0963!2d76.2863!5e0!3m2!1sen!2sin!4v1700000000003!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Bhangarh Fort <span class="arrow">↓</span> Ajabgarh <span class="arrow">↓</span> Abhaneri <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-ghost"></i> 17th Century Bhangarh Fort</span>
+              <span class="trip-highlight-tag"><i class="fas fa-archway"></i> Ajabgarh Valley Ruins</span>
+              <span class="trip-highlight-tag"><i class="fas fa-camera"></i> Chand Baori Stepwell</span>
+              <span class="trip-highlight-tag"><i class="fas fa-tree"></i> Aravalli Forest Drive</span>
+            </div>
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹2,799</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-bhangarh-tour.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Bhangarh • Ajabgarh • Abhaneri" data-price="₹2,799" data-distance="250 km" data-duration="9 Hours">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TRIP 5: Sariska Pandupol Siliserh ================= -->
+        <div class="trip-card" data-category="wildlife adventure family weekend" data-stops="3" data-duration="10">
+          <div class="trip-image-wrap">
+            <img src="https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=800&q=80" alt="Sariska Tiger Reserve and Siliserh Lake Wildlife Tour" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-paw"></i> Wildlife</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 260 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Sariska • Pandupol • Siliserh Lake" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Sariska Tiger Reserve & Siliserh Lake Tour" data-url="https://happyjourneycabs.com/jaipur-sariska-tour.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> 10 Hours</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 3 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> Forest & Lake Route</span>
+            </div>
+            <h3 class="trip-title">Sariska • Pandupol • Siliserh Lake</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Sariska • Pandupol • Siliserh Lake" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d200000!2d76.3!3d27.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x3972a3dd45d16d0f%3A0x2f94d93ee9d5df65!2sSariska%20Tiger%20Reserve%2C%20Alwar%2C%20Rajasthan!3m2!1d27.3168!2d76.4357!5e0!3m2!1sen!2sin!4v1700000000004!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Sariska <span class="arrow">↓</span> Pandupol <span class="arrow">↓</span> Siliserh Lake <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-binoculars"></i> Sariska Tiger & Leopard Safari</span>
+              <span class="trip-highlight-tag"><i class="fas fa-om"></i> Pandupol Hanuman Ji</span>
+              <span class="trip-highlight-tag"><i class="fas fa-water"></i> Siliserh Lake Palace Boating</span>
+              <span class="trip-highlight-tag"><i class="fas fa-leaf"></i> Lush Green Hills</span>
+            </div>
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹2,899</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-sariska-tour.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Sariska • Pandupol • Siliserh Lake" data-price="₹2,899" data-distance="260 km" data-duration="10 Hours">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TRIP 6: Neemrana Alwar Bala Quila ================= -->
+        <div class="trip-card" data-category="heritage luxury weekend family" data-stops="3" data-duration="12">
+          <div class="trip-image-wrap">
+            <img src="https://images.unsplash.com/photo-1585130401366-fe05a8d813c4?auto=format&fit=crop&w=800&q=80" alt="Neemrana Fort Palace and Bala Quila Alwar Fort Tour" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-chess-rook"></i> Fort Tour</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 340 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Neemrana • Alwar • Bala Quila" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Neemrana Fort Palace & Bala Quila Tour" data-url="https://happyjourneycabs.com/jaipur-neemrana-alwar-tour.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> 12 Hours</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 3 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> NH-48 Expressway</span>
+            </div>
+            <h3 class="trip-title">Neemrana • Alwar • Bala Quila</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Neemrana • Alwar • Bala Quila" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d250000!2d76.3!3d27.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x396d54c86b6a3dd5%3A0x6b94cb263dc16a7!2sNeemrana%20Fort-Palace%2C%20Neemrana%2C%20Rajasthan!3m2!1d27.9944!2d76.3861!5e0!3m2!1sen!2sin!4v1700000000005!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Neemrana <span class="arrow">↓</span> Alwar <span class="arrow">↓</span> Bala Quila <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-crown"></i> 15th Century Neemrana Fort</span>
+              <span class="trip-highlight-tag"><i class="fas fa-city"></i> Alwar City Palace & Moat</span>
+              <span class="trip-highlight-tag"><i class="fas fa-shield-alt"></i> Majestic Bala Quila Ramparts</span>
+              <span class="trip-highlight-tag"><i class="fas fa-bolt"></i> Optional Zip-line Experience</span>
+            </div>
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹3,599</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-neemrana-alwar-tour.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Neemrana • Alwar • Bala Quila" data-price="₹3,599" data-distance="340 km" data-duration="12 Hours">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TRIP 7: Sambhar Lake Shakambhari Mata ================= -->
+        <div class="trip-card" data-category="wildlife nature budget family" data-stops="2" data-duration="7">
+          <div class="trip-image-wrap">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Sambhar Salt Lake and Shakambhari Mata Temple Nature Tour" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-leaf"></i> Nature</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 200 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Sambhar Lake • Shakambhari Mata" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Sambhar Salt Lake Nature Tour" data-url="https://happyjourneycabs.com/jaipur-sambhar-lake-tour.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> 7 Hours</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 2 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> Short Sunset Drive</span>
+            </div>
+            <h3 class="trip-title">Sambhar Lake • Shakambhari Mata</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Sambhar Lake • Shakambhari Mata" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d150000!2d75.1!3d26.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x396cefc692c89f55%3A0x8e82023dcbe9c7f6!2sSambhar%20Salt%20Lake%2C%20Rajasthan!3m2!1d26.9124!2d75.2016!5e0!3m2!1sen!2sin!4v1700000000006!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Sambhar Lake <span class="arrow">↓</span> Shakambhari Mata <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-water"></i> India’s Largest Inland Salt Lake</span>
+              <span class="trip-highlight-tag"><i class="fas fa-om"></i> Ancient Shakambhari Temple</span>
+              <span class="trip-highlight-tag"><i class="fas fa-camera"></i> Surreal Sunset Salt Horizons</span>
+              <span class="trip-highlight-tag"><i class="fas fa-feather"></i> Pink Flamingo Spotting (Winter)</span>
+            </div>
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹2,399</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-sambhar-lake-tour.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Sambhar Lake • Shakambhari Mata" data-price="₹2,399" data-distance="200 km" data-duration="7 Hours">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TRIP 8: Ranthambore Safari ================= -->
+        <div class="trip-card" data-category="wildlife weekend luxury adventure family" data-stops="3" data-duration="Full Day">
+          <div class="trip-image-wrap">
+            <img src="assets/images/tour-ranthambore.jpg" alt="Ranthambore National Park Tiger Safari Road Trip" class="trip-image" loading="lazy" decoding="async">
+            <div class="trip-overlay"></div>
+            <span class="trip-badge-category"><i class="fas fa-calendar-check"></i> Weekend</span>
+            <span class="trip-badge-distance"><i class="fas fa-route"></i> 380 km</span>
+            <div class="trip-actions-floating">
+              <button class="btn-icon-float fav-btn" data-trip="Ranthambore Safari" title="Save Trip to Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon-float share-btn" data-title="Ranthambore Tiger Safari Weekend" data-url="https://happyjourneycabs.com/jaipur-ranthambore-weekend-tour.html" title="Share Trip"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-meta-row">
+              <span class="trip-meta-item"><i class="fas fa-clock"></i> Full Day / Weekend</span>
+              <span class="trip-meta-item"><i class="fas fa-map-marker-alt"></i> 3 Stops</span>
+              <span class="trip-meta-item"><i class="fas fa-shield-alt"></i> Direct Expressway</span>
+            </div>
+            <h3 class="trip-title">Ranthambore Safari</h3>
+            <div class="trip-route-box">
+              <div class="trip-route-title">
+                <span><i class="fas fa-directions"></i> Route Timeline</span>
+                <button class="btn-trip-route view-route-btn" data-trip="Ranthambore Safari" data-map="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d250000!2d76.1!3d26.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x396db4c83f98256d%3A0x86b033e579294248!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x396fe73e33f39a47%3A0x367f08b3ee13a213!2sRanthambore%20National%2C%20Sawai%20Madhopur%2C%20Rajasthan!3m2!1d26.0173!2d76.5026!5e0!3m2!1sen!2sin!4v1700000000007!5m2!1sen!2sin" style="padding: 2px 8px; font-size:0.72rem;"><i class="fas fa-map"></i> View Route</button>
+              </div>
+              <div class="trip-route-path">
+                Jaipur <span class="arrow">↓</span> Sawai Madhopur <span class="arrow">↓</span> Ranthambore Safari <span class="arrow">↓</span> Trinetra Ganesh Ji <span class="arrow">↓</span> Jaipur
+              </div>
+            </div>
+            <div class="trip-highlights">
+              <span class="trip-highlight-tag"><i class="fas fa-paw"></i> World-Famous Bengal Tiger Safari</span>
+              <span class="trip-highlight-tag"><i class="fas fa-om"></i> Historic Trinetra Ganesh Temple</span>
+              <span class="trip-highlight-tag"><i class="fas fa-fort-awesome"></i> UNESCO Ranthambore Fort</span>
+              <span class="trip-highlight-tag"><i class="fas fa-bed"></i> Same-Day or Overnight Weekend Stay</span>
+            </div>
+            <div class="trip-footer">
+              <div class="trip-price-wrap">
+                <span class="trip-price-label">Starting Price</span>
+                <span class="trip-price-amount">₹4,199</span>
+                <span class="trip-price-unit">AC Sedan • All Inclusive</span>
+              </div>
+              <div class="trip-cta-buttons">
+                <a href="jaipur-ranthambore-weekend-tour.html" class="btn-trip-details">Details</a>
+                <button class="btn-trip-book instant-book-trigger" data-trip="Ranthambore Safari" data-price="₹4,199" data-distance="380 km" data-duration="Full Day">Book Now <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noRoadtripsMsg" style="display: none; text-align: center; padding: 4rem 1rem; background: #FDFBF7; border-radius: var(--trip-radius); border: 1px dashed rgba(212,175,55,0.4); margin-top: 2rem;">
+        <i class="fas fa-search-minus" style="font-size: 3rem; color: var(--saffron); margin-bottom: 1rem;"></i>
+        <h3 style="font-size: 1.5rem; color: var(--dark-brown); margin-bottom: 0.5rem;">No Matching Trips Found</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">We couldn't find any curated road trip matching your current filter or keyword search.</p>
+        <button class="btn btn-primary reset-filter-btn" style="background: var(--saffron); border: none; padding: 0.7rem 1.8rem; border-radius: var(--radius-full); font-weight: 700; color:#fff; cursor:pointer;">Reset All Filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY CHOOSE CURATED ROAD TRIPS WITH HAPPY JOURNEY CABS?
+       ========================================================================== -->
+  <section style="background: #F8F5EE; padding: 5rem 0; border-top: 1px solid rgba(44,30,22,0.08); border-bottom: 1px solid rgba(44,30,22,0.08);">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 3.5rem;">
+        <span class="saffron-badge" style="background:rgba(212,175,55,0.15); color:var(--dark-brown); padding:0.4rem 1rem; border-radius:var(--radius-full); font-weight:700; font-size:0.8rem; display:inline-block; margin-bottom:1rem;">✦ Verified Chauffeur Fleet ✦</span>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 3.8vw, 2.6rem); color: var(--dark-brown); margin-bottom: 1rem;">The Royal Way to Experience Rajasthan</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7;">Say goodbye to rigid public transport schedules and stressful navigation. Our road trip itineraries combine flexibility, transparent pricing, and royal hospitality.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <div style="background: var(--ivory-pure); padding: 2.2rem 1.8rem; border-radius: var(--trip-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(44,30,22,0.06); text-align: center;">
+          <div style="width: 64px; height: 64px; background: rgba(255, 107, 0, 0.12); color: var(--saffron); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.4rem;">
+            <i class="fas fa-route"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; color: var(--dark-brown); margin-bottom: 0.8rem;">Optimized & Verified Routes</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">Our routes are curated by veteran local drivers to ensure smooth highways, safe pitstops, clean restrooms, and zero wasted time.</p>
+        </div>
+
+        <div style="background: var(--ivory-pure); padding: 2.2rem 1.8rem; border-radius: var(--trip-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(44,30,22,0.06); text-align: center;">
+          <div style="width: 64px; height: 64px; background: rgba(212, 175, 55, 0.15); color: var(--gold-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.4rem;">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; color: var(--dark-brown); margin-bottom: 0.8rem;">All-Inclusive Transparent Pricing</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">Fixed quotes including fuel, interstate taxes, toll charges, and driver allowance. Zero hidden costs, ever.</p>
+        </div>
+
+        <div style="background: var(--ivory-pure); padding: 2.2rem 1.8rem; border-radius: var(--trip-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(44,30,22,0.06); text-align: center;">
+          <div style="width: 64px; height: 64px; background: rgba(15, 82, 186, 0.12); color: var(--emerald); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.4rem;">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; color: var(--dark-brown); margin-bottom: 0.8rem;">Verified Chauffeur Guides</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">Polite, uniformed, multilingual chauffeurs who double as local advisors for legendary food stops and temple darshan timings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        7. POPULAR DESTINATIONS SHOWCASE
        ========================================================================== -->
   <section class="section-padding">
@@ -838,8 +1351,355 @@
   <div id="floating-actions-container"></div>
   <div id="modal-container"></div>
 
+  <!-- ==========================================================================
+       ROAD TRIPS MODALS & TOAST CONTAINER
+       ========================================================================== -->
+  <!-- MODAL 1: GOOGLE MAPS EMBEDDED ROUTE -->
+  <div class="roadtrips-modal-backdrop" id="mapModal" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+    <div class="roadtrips-modal-content" style="max-width: 720px;">
+      <button class="modal-close-btn close-modal-btn" aria-label="Close Map Modal"><i class="fas fa-times"></i></button>
+      <h3 class="modal-header-title" id="mapModalTitle"><i class="fas fa-map-marked-alt" style="color: var(--saffron);"></i> Route Map</h3>
+      <p class="modal-header-sub" id="mapModalSub">Interactive Google Maps navigation route and checkpoints.</p>
+      <div style="width: 100%; height: 400px; border-radius: var(--radius-md); overflow: hidden; border: 2px solid rgba(44,30,22,0.1); background: #F4F1EA;">
+        <iframe id="googleMapIframe" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: INSTANT CAB BOOKING FORM -->
+  <div class="roadtrips-modal-backdrop" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="roadtrips-modal-content">
+      <button class="modal-close-btn close-modal-btn" aria-label="Close Booking Modal"><i class="fas fa-times"></i></button>
+      <div style="display:inline-flex; align-items:center; gap:0.4rem; background:var(--saffron-light); color:var(--saffron); padding:0.3rem 0.8rem; border-radius:var(--radius-full); font-weight:700; font-size:0.75rem; text-transform:uppercase; margin-bottom:0.6rem;">
+        <i class="fas fa-bolt"></i> Instant Confirmation
+      </div>
+      <h3 class="modal-header-title" id="bookingModalTitle">Book Your Road Trip</h3>
+      <p class="modal-header-sub" id="bookingModalSub">Fill out the form below to lock your cab at best transparent pricing.</p>
+
+      <form id="roadtripsBookingForm" onsubmit="handleRoadtripSubmit(event)">
+        <input type="hidden" id="modalTripName" name="tripName" value="">
+        <input type="hidden" id="modalTripPrice" name="tripPrice" value="">
+
+        <div style="background: #FDFBF7; border: 1px solid rgba(212,175,55,0.3); border-radius: var(--radius-sm); padding: 0.9rem 1.1rem; margin-bottom: 1.4rem; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="color: var(--dark-brown); font-size: 0.95rem; display: block;" id="displayTripName">Trip Name</strong>
+            <span style="color: var(--text-muted); font-size: 0.82rem;" id="displayTripMeta">430 km • 14 Hours</span>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--saffron); font-size: 1.3rem; font-weight: 800;" id="displayTripPrice">₹4,599</span>
+            <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">Starting Sedan Tariff</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 1.1rem;">
+          <div>
+            <label style="display: block; font-size: 0.84rem; font-weight: 700; color: var(--dark-brown); margin-bottom: 0.4rem;" for="pickupLocation">Pickup Location *</label>
+            <input type="text" id="pickupLocation" name="pickupLocation" required placeholder="e.g., Hotel / Airport / Home Address in Jaipur" style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid rgba(44,30,22,0.15); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.92rem; outline: none;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.84rem; font-weight: 700; color: var(--dark-brown); margin-bottom: 0.4rem;" for="tripDate">Trip Date *</label>
+            <input type="date" id="tripDate" name="tripDate" required style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid rgba(44,30,22,0.15); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.92rem; outline: none;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 1.1rem;">
+          <div>
+            <label style="display: block; font-size: 0.84rem; font-weight: 700; color: var(--dark-brown); margin-bottom: 0.4rem;" for="cabType">Select Cab Type *</label>
+            <select id="cabType" name="cabType" required style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid rgba(44,30,22,0.15); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.92rem; background: #FFF; outline: none;">
+              <option value="AC Sedan (Dzire / Etios)">AC Sedan (Dzire / Etios) — 4 Seats</option>
+              <option value="7-Seater SUV (Ertiga / Carens)">7-Seater SUV (Ertiga / Carens) — 6+1 Seats</option>
+              <option value="Toyota Innova Crysta">Toyota Innova Crysta — 6+1 / 7+1 Seats</option>
+              <option value="Toyota Fortuner 4×4">Toyota Fortuner VIP — 6+1 Seats</option>
+              <option value="Maharaja Tempo Traveller">Maharaja Tempo Traveller — 12 to 20 Seats</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.84rem; font-weight: 700; color: var(--dark-brown); margin-bottom: 0.4rem;" for="passengers">Total Passengers *</label>
+            <input type="number" id="passengers" name="passengers" min="1" max="25" value="4" required style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid rgba(44,30,22,0.15); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.92rem; outline: none;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 1.5rem;">
+          <div>
+            <label style="display: block; font-size: 0.84rem; font-weight: 700; color: var(--dark-brown); margin-bottom: 0.4rem;" for="passengerName">Your Full Name *</label>
+            <input type="text" id="passengerName" name="passengerName" required placeholder="e.g., Rajesh Sharma" style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid rgba(44,30,22,0.15); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.92rem; outline: none;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.84rem; font-weight: 700; color: var(--dark-brown); margin-bottom: 0.4rem;" for="passengerPhone">Phone / WhatsApp Number *</label>
+            <input type="tel" id="passengerPhone" name="passengerPhone" required placeholder="e.g., +91 98765 43210" style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid rgba(44,30,22,0.15); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.92rem; outline: none;">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-trip-book" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 1rem;">
+          <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Confirm Booking via WhatsApp & SMS
+        </button>
+        <p style="text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.8rem;">
+          <i class="fas fa-lock text-emerald"></i> No advance payment required online. Pay directly to driver or team after booking confirmation.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="roadtrips-toast" id="roadtripsToast">
+    <i class="fas fa-check-circle" style="color: #25D366; font-size: 1.2rem;"></i>
+    <span id="toastMsg">Trip saved to your wishlist!</span>
+  </div>
+
   <!-- Reusable Components & Main Scripts -->
   <script src="js/components.js?v=20260715c"></script>
   <script src="js/main.js?v=20260715c"></script>
+
+  <!-- Road Trips Interactive Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set tomorrow as default date in booking modal
+      const tripDateInput = document.getElementById('tripDate');
+      if (tripDateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tripDateInput.value = tomorrow.toISOString().split('T')[0];
+      }
+
+      // 1. FILTER LOGIC
+      const filterButtons = document.querySelectorAll('.filter-pill');
+      const tripCards = document.querySelectorAll('.trip-card');
+      const searchInput = document.getElementById('roadtripsSearchInput');
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      const noResultsMsg = document.getElementById('noRoadtripsMsg');
+
+      let currentFilter = 'all';
+      let currentQuery = '';
+
+      function updateGrid() {
+        let visibleCount = 0;
+        tripCards.forEach(card => {
+          const categories = card.getAttribute('data-category') || '';
+          const titleText = (card.querySelector('.trip-title')?.textContent || '').toLowerCase();
+          const highlightsText = (card.querySelector('.trip-highlights')?.textContent || '').toLowerCase();
+          const routeText = (card.querySelector('.trip-route-path')?.textContent || '').toLowerCase();
+          
+          const matchesFilter = (currentFilter === 'all') || categories.split(' ').includes(currentFilter);
+          const matchesSearch = !currentQuery || titleText.includes(currentQuery) || highlightsText.includes(currentQuery) || routeText.includes(currentQuery);
+
+          if (matchesFilter && matchesSearch) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (visibleCount === 0) {
+          if (noResultsMsg) noResultsMsg.style.display = 'block';
+        } else {
+          if (noResultsMsg) noResultsMsg.style.display = 'none';
+        }
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter') || 'all';
+          updateGrid();
+        });
+      });
+
+      // 2. SEARCH LOGIC
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.trim().toLowerCase();
+          clearSearchBtn.style.display = currentQuery ? 'block' : 'none';
+          updateGrid();
+        });
+
+        clearSearchBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          currentQuery = '';
+          clearSearchBtn.style.display = 'none';
+          updateGrid();
+          searchInput.focus();
+        });
+      }
+
+      // Reset Button on No Results
+      document.querySelector('.reset-filter-btn')?.addEventListener('click', () => {
+        currentFilter = 'all';
+        currentQuery = '';
+        if (searchInput) searchInput.value = '';
+        if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+        filterButtons.forEach(b => {
+          if (b.getAttribute('data-filter') === 'all') b.classList.add('active');
+          else b.classList.remove('active');
+        });
+        updateGrid();
+      });
+
+      // 3. MAP MODAL LOGIC
+      const mapModal = document.getElementById('mapModal');
+      const googleMapIframe = document.getElementById('googleMapIframe');
+      const mapModalTitle = document.getElementById('mapModalTitle');
+
+      document.querySelectorAll('.view-route-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const tripName = btn.getAttribute('data-trip');
+          const mapUrl = btn.getAttribute('data-map');
+          if (mapModalTitle) mapModalTitle.innerHTML = `<i class="fas fa-map-marked-alt" style="color: var(--saffron);"></i> Route Map — ${tripName}`;
+          if (googleMapIframe) googleMapIframe.src = mapUrl;
+          if (mapModal) mapModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // 4. BOOKING MODAL LOGIC
+      const bookingModal = document.getElementById('bookingModal');
+      document.querySelectorAll('.instant-book-trigger').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const tripName = btn.getAttribute('data-trip');
+          const tripPrice = btn.getAttribute('data-price');
+          const tripDistance = btn.getAttribute('data-distance');
+          const tripDuration = btn.getAttribute('data-duration');
+
+          const modalTripName = document.getElementById('modalTripName');
+          const modalTripPrice = document.getElementById('modalTripPrice');
+          const displayTripName = document.getElementById('displayTripName');
+          const displayTripMeta = document.getElementById('displayTripMeta');
+          const displayTripPrice = document.getElementById('displayTripPrice');
+
+          if (modalTripName) modalTripName.value = tripName;
+          if (modalTripPrice) modalTripPrice.value = tripPrice;
+          if (displayTripName) displayTripName.textContent = tripName;
+          if (displayTripMeta) displayTripMeta.textContent = `${tripDistance} • ${tripDuration}`;
+          if (displayTripPrice) displayTripPrice.textContent = tripPrice;
+
+          if (bookingModal) bookingModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close Modals logic
+      document.querySelectorAll('.close-modal-btn, .roadtrips-modal-backdrop').forEach(el => {
+        el.addEventListener('click', (e) => {
+          if (e.target === el || el.classList.contains('close-modal-btn') || el.closest('.close-modal-btn')) {
+            if (mapModal) mapModal.classList.remove('active');
+            if (bookingModal) bookingModal.classList.remove('active');
+            document.body.style.overflow = '';
+            if (googleMapIframe) googleMapIframe.src = '';
+          }
+        });
+      });
+
+      // 5. WISHLIST & SHARE TOAST LOGIC
+      const toast = document.getElementById('roadtripsToast');
+      const toastMsg = document.getElementById('toastMsg');
+
+      function showToast(message) {
+        if (!toast || !toastMsg) return;
+        toastMsg.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3200);
+      }
+
+      // Load Wishlist from localStorage
+      let wishlist = JSON.parse(localStorage.getItem('hjc_roadtrips_wishlist') || '[]');
+      document.querySelectorAll('.fav-btn').forEach(btn => {
+        const tripName = btn.getAttribute('data-trip');
+        if (wishlist.includes(tripName)) {
+          btn.classList.add('fav-active');
+          btn.innerHTML = '<i class="fas fa-heart"></i>';
+        }
+
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (wishlist.includes(tripName)) {
+            wishlist = wishlist.filter(item => item !== tripName);
+            btn.classList.remove('fav-active');
+            btn.innerHTML = '<i class="far fa-heart"></i>';
+            showToast(`Removed "${tripName}" from Wishlist`);
+          } else {
+            wishlist.push(tripName);
+            btn.classList.add('fav-active');
+            btn.innerHTML = '<i class="fas fa-heart"></i>';
+            showToast(`♥ "${tripName}" saved to Wishlist`);
+          }
+          localStorage.setItem('hjc_roadtrips_wishlist', JSON.stringify(wishlist));
+        });
+      });
+
+      // Share logic
+      document.querySelectorAll('.share-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const title = btn.getAttribute('data-title');
+          const url = btn.getAttribute('data-url');
+
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: `${title} | Happy Journey Cabs`,
+                text: `Check out this royal road trip from Jaipur: ${title}`,
+                url: url
+              });
+            } catch (err) {
+              console.log('Error sharing:', err);
+            }
+          } else {
+            navigator.clipboard.writeText(url).then(() => {
+              showToast(`Link copied to clipboard: ${title}`);
+            });
+          }
+        });
+      });
+    });
+
+    // 6. FORM SUBMISSION -> WHATSAPP REDIRECT & CONFIRMATION
+    function handleRoadtripSubmit(e) {
+      e.preventDefault();
+      const tripName = document.getElementById('modalTripName').value;
+      const tripPrice = document.getElementById('modalTripPrice').value;
+      const pickup = document.getElementById('pickupLocation').value;
+      const date = document.getElementById('tripDate').value;
+      const cab = document.getElementById('cabType').value;
+      const pax = document.getElementById('passengers').value;
+      const name = document.getElementById('passengerName').value;
+      const phone = document.getElementById('passengerPhone').value;
+
+      const whatsappText = `*New Curated Road Trip Booking Inquiry*%0A` +
+        `----------------------------------------%0A` +
+        `✦ *Trip:* ${tripName}%0A` +
+        `✦ *Starting Price:* ${tripPrice}%0A` +
+        `✦ *Date:* ${date}%0A` +
+        `✦ *Pickup:* ${pickup}%0A` +
+        `✦ *Cab Type:* ${cab}%0A` +
+        `✦ *Passengers:* ${pax}%0A` +
+        `✦ *Customer Name:* ${name}%0A` +
+        `✦ *Contact Phone:* ${phone}%0A` +
+        `----------------------------------------%0A` +
+        `Please confirm vehicle availability and driver details.`;
+
+      const whatsappUrl = `https://wa.me/919783201155?text=${whatsappText}`;
+      
+      // Close modal and show toast confirmation
+      const bookingModal = document.getElementById('bookingModal');
+      if (bookingModal) bookingModal.classList.remove('active');
+      document.body.style.overflow = '';
+
+      const toast = document.getElementById('roadtripsToast');
+      if (toast) {
+        const toastMsg = document.getElementById('toastMsg');
+        if (toastMsg) toastMsg.textContent = `Opening WhatsApp booking for ${tripName}...`;
+        toast.classList.add('show');
+      }
+
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 600);
+    }
+  </script>
 </body>
 </html>
